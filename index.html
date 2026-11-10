@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人人美剧官网入口 - 美剧观看与剧集指南</title>
+    <meta name="description" content="人人美剧官网入口提供美剧观看入口、热播剧集推荐、更新动态与深度指南，涵盖悬疑、科幻、犯罪等类型，适合美剧迷查找剧集与追更。">
+    <meta name="keywords" content="美剧观看,美剧推荐,热播美剧,美剧更新,美剧类型">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Cpath d='M20 16h24v8H28v8h16v8H28v8h16v8H20z' fill='%2338bdf8'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg: #f6f8fc;
+            --panel: #ffffff;
+            --text: #1e293b;
+            --muted: #475569;
+            --primary: #0f172a;
+            --accent: #38bdf8;
+            --accent-soft: #e0f2fe;
+            --border: #e2e8f0;
+            --shadow: 0 4px 12px rgba(0,0,0,0.04);
+            --radius: 14px;
+            --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --sticky-height: 96px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-height); }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-top: 0;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        .container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* 吸顶区域 */
+        .sticky-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--panel);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--border);
+        }
+        .announcement-bar {
+            background: var(--primary);
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            padding: 8px 0;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+        .announcement-bar span { color: var(--accent); font-weight: 600; }
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 34px; height: 34px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        .logo-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--muted);
+        }
+        .main-nav a:hover { color: var(--accent); }
+        .quick-actions { display: flex; gap: 12px; align-items: center; }
+        .search-mini {
+            display: flex;
+            align-items: center;
+            background: #f1f5f9;
+            border-radius: 30px;
+            padding: 4px 12px;
+            gap: 6px;
+        }
+        .search-mini input {
+            border: none;
+            background: transparent;
+            font-size: 0.85rem;
+            padding: 6px 0;
+            outline: none;
+            width: 130px;
+        }
+        .search-mini button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+        .btn-ghost {
+            font-size: 0.85rem;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 6px 16px;
+            background: var(--panel);
+            transition: 0.2s;
+        }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--primary); }
+        /* 主布局 三栏 */
+        .portal-layout {
+            display: grid;
+            grid-template-columns: 180px 1fr 260px;
+            gap: 28px;
+            padding: 28px 0 40px;
+        }
+        /* 首屏 */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-text { max-width: 600px; z-index: 2; }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: white;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: #7dd3fc; }
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #475569;
+            color: #e2e8f0;
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .btn-outline-light:hover { border-color: var(--accent); color: white; }
+        .hero-visual {
+            z-index: 1;
+            opacity: 0.8;
+        }
+        /* 左栏频道索引 */
+        .channel-sidebar {
+            position: sticky;
+            top: calc(var(--sticky-height) + 16px);
+            align-self: start;
+        }
+        .channel-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .channel-list { list-style: none; }
+        .channel-list li { margin-bottom: 4px; }
+        .channel-list a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            transition: 0.15s;
+        }
+        .channel-list a:hover { background: var(--accent-soft); color: var(--primary); }
+        /* 右栏辅助 */
+        .aside-panel {
+            background: var(--panel);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+        }
+        .aside-panel h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        .ranking-list { list-style: none; }
+        .ranking-list li {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .ranking-list li:last-child { border-bottom: none; }
+        .rank-num {
+            font-weight: 800;
+            color: var(--accent);
+            width: 20px;
+            flex-shrink: 0;
+        }
+        .update-stream { list-style: none; }
+        .update-stream li {
+            font-size: 0.85rem;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border);
+            color: var(--muted);
+        }
+        .update-stream li:last-child { border-bottom: none; }
+        .update-stream strong { color: var(--text); font-weight: 600; }
+        /* 主内容区通用卡片 */
+        .section {
+            background: var(--panel);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+        .section-header .more-link {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 20px;
+        }
+        .card-item {
+            background: #fafcff;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-item:hover { box-shadow: 0 8px 18px rgba(0,0,0,0.06); transform: translateY(-2px); }
+        .card-thumb {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+        .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+        .card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: var(--primary);
+            line-height: 1.4;
+        }
+        .card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .card-desc {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 10px;
+            flex: 1;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: #94a3b8;
+            border-top: 1px solid var(--border);
+            padding-top: 8px;
+        }
+        /* 紧凑列表 */
+        .compact-list { list-style: none; }
+        .compact-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
+        }
+        .compact-list li:last-child { border-bottom: none; }
+        .list-title { font-weight: 600; color: var(--text); }
+        .list-meta { font-size: 0.78rem; color: #94a3b8; }
+        /* 分类入口网格 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .category-item {
+            background: #f1f5f9;
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            transition: 0.15s;
+            border: 1px solid transparent;
+        }
+        .category-item:hover { background: var(--accent-soft); border-color: var(--accent); }
+        /* 深度解析排版 */
+        .deep-dive h3 {
+            font-size: 1.2rem;
+            margin: 24px 0 12px;
+            color: var(--primary);
+        }
+        .deep-dive p {
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+        .deep-dive ul {
+            margin: 0 0 16px 20px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+        .deep-dive li { margin-bottom: 6px; }
+        /* FAQ */
+        details {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        details:last-child { border-bottom: none; }
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 0.95rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "＋"; color: var(--accent); font-weight: 400; }
+        details[open] summary::after { content: "－"; }
+        details p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            padding-left: 4px;
+        }
+        /* 评论 */
+        .comment-list { display: flex; flex-direction: column; gap: 14px; }
+        .comment-item {
+            display: flex;
+            gap: 12px;
+            font-size: 0.88rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 14px;
+        }
+        .comment-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .comment-content p { color: var(--muted); margin-top: 2px; }
+        .comment-name { font-weight: 600; color: var(--primary); }
+        /* 资讯 */
+        .news-list { list-style: none; }
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            width: 80px;
+            flex-shrink: 0;
+        }
+        .news-body h4 { font-size: 0.95rem; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
+        .news-body p { font-size: 0.85rem; color: var(--muted); }
+        /* 标签索引 */
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            transition: 0.15s;
+        }
+        .tag:hover { background: var(--accent-soft); color: var(--primary); }
+        /* 页尾 */
+        footer {
+            background: var(--primary);
+            color: #cbd5e1;
+            padding: 40px 0 24px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-brand .logo-text { color: white; font-size: 1.3rem; }
+        .footer-brand p { margin-top: 12px; color: #94a3b8; max-width: 280px; }
+        .footer-col h4 { font-size: 0.9rem; color: white; margin-bottom: 12px; font-weight: 600; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 8px; }
+        .footer-col a { color: #94a3b8; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #64748b;
+            font-size: 0.78rem;
+        }
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .portal-layout { grid-template-columns: 1fr 260px; }
+            .channel-sidebar { display: none; }
+            .main-nav ul { gap: 14px; font-size: 0.85rem; }
+        }
+        @media (max-width: 740px) {
+            .portal-layout { grid-template-columns: 1fr; }
+            .aside-panel { margin-top: 20px; }
+            .header-main { flex-wrap: wrap; height: auto; padding: 10px 0; }
+            .main-nav { order: 3; width: 100%; overflow-x: auto; padding: 6px 0; }
+            .main-nav ul { gap: 18px; white-space: nowrap; }
+            .hero h1 { font-size: 1.8rem; }
+            .category-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .search-mini input { width: 90px; }
+            :root { --sticky-height: 120px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .section { padding: 20px; }
+            .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .hero { padding: 28px 20px; }
+        }
+        /* 无结果提示 */
+        .no-result {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .no-result.show { display: block; }
+        .hidden { display: none !important; }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 吸顶区域 -->
+    <div class="sticky-wrapper">
+        <div class="announcement-bar">
+            📺 本周新上线 <span>《怪奇物语》最终季</span> 11月6日；《白莲花度假村》第三季定档11月15日
+        </div>
+        <div class="container header-main">
+            <div class="logo-area">
+                <div class="logo-icon">R</div>
+                <span class="logo-text">人人美剧官网入口</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#精选推荐">精选推荐</a></li>
+                    <li><a href="#最新更新">最新更新</a></li>
+                    <li><a href="#分类入口">分类入口</a></li>
+                    <li><a href="#深度解析">深度解析</a></li>
+                    <li><a href="#常见问题">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="quick-actions">
+                <div class="search-mini">
+                    <input type="text" id="searchInput" placeholder="搜索剧集..." aria-label="搜索剧集">
+                    <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+                </div>
+                <a href="#精选推荐" class="btn-ghost">热门剧集</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- 首屏 -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-text">
+                <h1 id="hero-heading">人人美剧官网入口</h1>
+                <p class="hero-desc">
+                    聚合美剧观看入口、热播剧集推荐与更新动态。涵盖悬疑、科幻、犯罪、喜剧等类型，提供剧集深度解析与消费指南，方便美剧迷快速找到想看的剧集。
+                </p>
+                <div class="hero-actions">
+                    <a href="#精选推荐" class="btn-primary">浏览热播剧集</a>
+                    <a href="#最新更新" class="btn-outline-light">查看更新动态</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg width="200" height="120" viewBox="0 0 200 120" fill="none">
+                    <rect x="10" y="10" width="180" height="100" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="16" fill="#38bdf8" opacity="0.3"/>
+                    <rect x="80" y="35" width="80" height="6" rx="3" fill="#475569"/>
+                    <rect x="80" y="50" width="60" height="6" rx="3" fill="#475569"/>
+                    <rect x="80" y="65" width="70" height="6" rx="3" fill="#475569"/>
+                    <rect x="30" y="85" width="140" height="4" rx="2" fill="#334155"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 三栏布局 -->
+        <div class="portal-layout">
+            <!-- 左栏频道索引 -->
+            <aside class="channel-sidebar" aria-label="频道索引">
+                <div class="channel-title">频道索引</div>
+                <ul class="channel-list">
+                    <li><a href="#精选推荐">悬疑烧脑</a></li>
+                    <li><a href="#精选推荐">科幻史诗</a></li>
+                    <li><a href="#精选推荐">犯罪纪实</a></li>
+                    <li><a href="#精选推荐">喜剧生活</a></li>
+                    <li><a href="#精选推荐">奇幻冒险</a></li>
+                    <li><a href="#精选推荐">医疗律政</a></li>
+                    <li><a href="#最新更新">今日更新</a></li>
+                    <li><a href="#热门榜单">热门榜单</a></li>
+                    <li><a href="#相关资讯">剧集资讯</a></li>
+                    <li><a href="#相关推荐">延伸推荐</a></li>
+                </ul>
+            </aside>
+
+            <!-- 中栏主内容 -->
+            <div class="main-content">
+                <!-- 主题领域概览 -->
+                <section class="section" id="领域概览">
+                    <div class="section-header">
+                        <h2>美剧领域概览</h2>
+                    </div>
+                    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:12px;">
+                        美剧涵盖的类型非常丰富，当前主流平台在播剧集以悬疑、科幻、犯罪、喜剧、奇幻五大方向为主。悬疑类如《怪奇物语》《真探》注重氛围与谜题推进；科幻类如《人生切割术》《苍穹浩瀚》构建世界观设定；犯罪纪实类如《毒枭》《东城梦魇》聚焦案件与人物弧光；喜剧生活类如《足球教练》《了不起的麦瑟尔夫人》提供轻快节奏；奇幻冒险类如《猎魔人》《时光之轮》依赖设定与特效。
+                    </p>
+                    <p style="font-size:0.95rem; color:var(--muted);">
+                        当前值得关注的具体内容：《怪奇物语》最终季11月6日上线，口碑解禁；《白莲花度假村》第三季定档11月15日，延续度假村讽刺风格；《人生切割术》第二季已完结，豆瓣评分9.1；《真探：夜之国度》冬季档上线，朱迪·福斯特主演。观众可以根据自己偏好的类型选择入口，也可以从更新动态中查看每日新集。
+                    </p>
+                </section>
+
+                <!-- 精选内容推荐 -->
+                <section class="section" id="精选推荐">
+                    <div class="section-header">
+                        <h2>精选内容推荐</h2>
+                        <a href="#最新更新" class="more-link">查看更新 →</a>
+                    </div>
+                    <div class="card-grid" id="cardGrid">
+                        <!-- 卡片1 -->
+                        <div class="card-item" data-title="怪奇物语 最终季">
+                            <img class="card-thumb" src="https://picsum.photos/seed/stranger-things-final/400/300" alt="怪奇物语最终季剧照" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">悬疑 / 科幻</div>
+                                <div class="card-title">怪奇物语 最终季</div>
+                                <div class="card-desc">霍金斯小镇终极对决，威尔与十一的命运走向终点，11月6日上线首集。</div>
+                                <div class="card-meta"><span>热度 9.8</span><span>更新至E1</span></div>
+                            </div>
+                        </div>
+                        <!-- 卡片2 -->
+                        <div class="card-item" data-title="白莲花度假村 第三季">
+                            <img class="card-thumb" src="https://picsum.photos/seed/white-lotus-s3/400/300" alt="白莲花度假村第三季海报" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">剧情 / 讽刺</div>
+                                <div class="card-title">白莲花度假村 第三季</div>
+                                <div class="card-desc">全新度假村泰国取景，继续剖析富人阶层的虚伪与荒诞，11月15日首播。</div>
+                                <div class="card-meta"><span>热度 9.2</span><span>定档11-15</span></div>
+                            </div>
+                        </div>
+                        <!-- 卡片3 -->
+                        <div class="card-item" data-title="人生切割术 第二季">
+                            <img class="card-thumb" src="https://picsum.photos/seed/severance-s2/400/300" alt="人生切割术第二季剧照" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">科幻 / 惊悚</div>
+                                <div class="card-title">人生切割术 第二季</div>
+                                <div class="card-desc">卢蒙公司秘密继续，马克与同事探索分离记忆的真相，已完结可全集观看。</div>
+                                <div class="card-meta"><span>评分 9.1</span><span>全10集</span></div>
+                            </div>
+                        </div>
+                        <!-- 卡片4 -->
+                        <div class="card-item" data-title="真探：夜之国度">
+                            <img class="card-thumb" src="https://picsum.photos/seed/true-detective-s4/400/300" alt="真探夜之国度剧照" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">犯罪 / 悬疑</div>
+                                <div class="card-title">真探：夜之国度</div>
+                                <div class="card-desc">朱迪·福斯特主演，阿拉斯加极夜下的连环失踪案，冷峻风格延续系列传统。</div>
+                                <div class="card-meta"><span>评分 8.7</span><span>全6集</span></div>
+                            </div>
+                        </div>
+                        <!-- 卡片5 -->
+                        <div class="card-item" data-title="足球教练 第四季">
+                            <img class="card-thumb" src="https://picsum.photos/seed/ted-lasso-s4/400/300" alt="足球教练第四季剧照" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">喜剧 / 运动</div>
+                                <div class="card-title">足球教练 第四季</div>
+                                <div class="card-desc">里士满队重返英超，内森与罗伊的教练组磨合，暖心喜剧回归。</div>
+                                <div class="card-meta"><span>热度 9.0</span><span>更新至E4</span></div>
+                            </div>
+                        </div>
+                        <!-- 卡片6 -->
+                        <div class="card-item" data-title="毒枭：墨西哥 最终季">
+                            <img class="card-thumb" src="https://picsum.photos/seed/narcos-mexico-final/400/300" alt="毒枭墨西哥最终季剧照" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-tag">犯罪 / 传记</div>
+                                <div class="card-title">毒枭：墨西哥 最终季</div>
+                                <div class="card-desc">缉毒局与贩毒集团的最终较量，聚焦90年代墨西哥毒品战争收尾。</div>
+                                <div class="card-meta"><span>评分 8.9</span><span>全8集</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="noResultMessage" class="no-result">没有找到匹配的剧集，换个关键词试试。</div>
+                </section>
+
+                <!-- 最新更新 / 动态 -->
+                <section class="section" id="最新更新">
+                    <div class="section-header">
+                        <h2>最新更新与动态</h2>
+                    </div>
+                    <ul class="compact-list">
+                        <li><span class="list-title">怪奇物语 最终季 S5E1</span><span class="list-meta">今天 09:00 上线</span></li>
+                        <li><span class="list-title">白莲花度假村 第三季 预告片</span><span class="list-meta">昨天 21:10 发布</span></li>
+                        <li><span class="list-title">人生切割术 第二季 幕后特辑</span><span class="list-meta">11月6日 更新</span></li>
+                        <li><span class="list-title">真探：夜之国度 第5集</span><span class="list-meta">11月5日 上线</span></li>
+                        <li><span class="list-title">足球教练 第四季 S4E4</span><span class="list-meta">11月4日 更新</span></li>
+                        <li><span class="list-title">毒枭：墨西哥 最终季 全季上线</span><span class="list-meta">11月3日 上线</span></li>
+                        <li><span class="list-title">《最后生还者》第二季 首张剧照</span><span class="list-meta">11月2日 发布</span></li>
+                        <li><span class="list-title">《熊家餐馆》第四季 续订确认</span><span class="list-meta">11月1日 官宣</span></li>
+                    </ul>
+                </section>
+
+                <!-- 分类入口 -->
+                <section class="section" id="分类入口">
+                    <div class="section-header">
+                        <h2>分类入口</h2>
+                    </div>
+                    <div class="category-grid">
+                        <a href="#精选推荐" class="category-item">悬疑</a>
+                        <a href="#精选推荐" class="category-item">科幻</a>
+                        <a href="#精选推荐" class="category-item">犯罪</a>
+                        <a href="#精选推荐" class="category-item">喜剧</a>
+                        <a href="#精选推荐" class="category-item">奇幻</a>
+                        <a href="#精选推荐" class="category-item">医疗律政</a>
+                        <a href="#最新更新" class="category-item">今日更新</a>
+                        <a href="#热门榜单" class="category-item">热门榜单</a>
+                    </div>
+                </section>
+
+                <!-- 深度解析正文 -->
+                <section class="section deep-dive" id="深度解析">
+                    <div class="section-header">
+                        <h2>深度解析：美剧类型与选择策略</h2>
+                    </div>
+                    <h3>悬疑烧脑类：氛围与谜题驱动</h3>
+                    <p>悬疑类美剧的核心魅力在于信息释放的节奏。以《怪奇物语》为例，每一季围绕一个超自然谜团展开，通过多线叙事逐步拼凑真相。观看这类剧集时，可以关注编剧如何布置“钩子”——通常每集结尾会留下一个悬念。如果偏好慢热氛围，可以选择《真探》系列；如果喜欢快节奏解谜，《迷失》式的高密度反转更合适。</p>
+                    <h3>科幻史诗类：世界观与设定</h3>
+                    <p>科幻剧的投入门槛往往在于世界观的理解成本。《人生切割术》构建了一个“工作记忆分离”的设定，观众需要跟随主角逐步发现公司秘密；《苍穹浩瀚》则直接进入多星球政治格局，前两集信息量较大。建议从设定相对简单的《人生切割术》入门，再看《西部世界》这类多层时间线作品。</p>
+                    <h3>犯罪纪实类：案件与人物弧光</h3>
+                    <p>犯罪类剧集通常有两种模式：单元剧（每集一个案件）和连续剧（一个案件贯穿整季）。《毒枭》系列采用旁白+时间线推进，适合对历史背景感兴趣的观众；《东城梦魇》则聚焦小镇警探的个人创伤与案件交织，情感浓度更高。判断一部犯罪剧是否适合自己，可以先看前三集是否建立了足够的人物动机。</p>
+                    <h3>喜剧生活类：节奏与共鸣</h3>
+                    <p>喜剧类美剧的观看门槛较低，但风格差异明显。《足球教练》依靠善意与幽默打动观众，适合放松时观看；《了不起的麦瑟尔夫人》则以密集台词和时代细节见长。如果对单镜头喜剧感兴趣，《熊家餐馆》将厨房高压与人物成长结合，虽然归类为喜剧但情感冲击强烈。</p>
+                    <h3>如何判断一部新剧是否值得投入时间</h3>
+                    <ul>
+                        <li>看首集是否在30分钟内建立核心冲突与人物关系。</li>
+                        <li>查看主创团队过往作品风格是否与你偏好一致。</li>
+                        <li>参考豆瓣/IMDb评分时注意区分“粉丝向”与“大众向”。</li>
+                        <li>对于续订剧集，第三季往往是质量分水岭，可优先补前两季。</li>
+                    </ul>
+                </section>
+
+                <!-- 体验指南 / 消费路径 -->
+                <section class="section" id="体验指南">
+                    <div class="section-header">
+                        <h2>美剧消费路径指南</h2>
+                    </div>
+                    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:12px;">初次接触美剧，建议从类型和长度两个维度做选择。如果时间有限，优先选择限定剧（6-10集），如《东城梦魇》《后翼弃兵》，单季故事完整不拖沓。如果喜欢长期追更，可以选择已续订多季的剧集，如《怪奇物语》《足球教练》。</p>
+                    <p style="font-size:0.95rem; color:var(--muted); margin-bottom:12px;">观看顺序上，悬疑类建议连续观看以免遗忘细节；喜剧类可以每周一集作为放松；科幻类可先看世界观介绍或第一季解说再进入正片。比较类似条目时，关注“单集时长”和“季数”两个指标：单集60分钟以上的剧集通常叙事更厚重，30分钟左右的喜剧更轻快。</p>
+                    <p style="font-size:0.95rem; color:var(--muted);">如果对某个类型产生兴趣，可以按“经典入门→同主创新作→同题材高分”的顺序扩展。例如喜欢《真探》后，可以尝试《心灵猎人》和《东城梦魇》，这三部都聚焦犯罪心理与调查过程。</p>
+                </section>
+
+                <!-- FAQ -->
+                <section class="section" id="常见问题">
+                    <div class="section-header">
+                        <h2>常见问题</h2>
+                    </div>
+                    <details>
+                        <summary>美剧一般多久更新一集？</summary>
+                        <p>大多数美剧每周更新一集，集中在周三至周五。流媒体平台有时会一次性放出全季，如Netflix原创剧。传统电视台剧集通常按秋季档（9月至次年5月）周更，冬歇期会暂停。</p>
+                    </details>
+                    <details>
+                        <summary>《怪奇物语》和《人生切割术》有什么区别？</summary>
+                        <p>《怪奇物语》是悬疑科幻冒险，侧重80年代怀旧与少年团冒险；《人生切割术》是科幻惊悚，探讨职场记忆分离与公司控制。前者节奏更明快，后者氛围压抑且需要关注细节。</p>
+                    </details>
+                    <details>
+                        <summary>第一次看美剧，从哪部开始比较好？</summary>
+                        <p>如果喜欢轻松幽默，可以从《足球教练》开始；如果偏好悬疑，推荐《东城梦魇》（限定剧，7集）；如果对科幻感兴趣，《人生切割术》第一季共9集，设定新颖且叙事紧凑。</p>
+                    </details>
+                    <details>
+                        <summary>犯罪类美剧的评判标准通常是什么？</summary>
+                        <p>主要看案件逻辑是否自洽、人物动机是否充分、以及是否在真实与戏剧化之间取得平衡。高分犯罪剧如《毒枭》在历史还原上投入较大，而《真探》更注重哲学氛围与角色深度。</p>
+                    </details>
+                    <details>
+                        <summary>《白莲花度假村》第三季什么时候上线？</summary>
+                        <p>第三季已定档2026年11月15日，共8集，故事发生在泰国度假村，原班主创迈克·怀特继续担任编剧和导演。</p>
+                    </details>
+                    <details>
+                        <summary>美剧的季数和集数一般怎么算？</summary>
+                        <p>有线台和流媒体剧集通常一季8-13集，公共台（如NBC、CBS）一季18-24集。限定剧只有一季，迷你剧通常4-6集。续订后第二季可能增加集数，但近年趋势是缩短季长以提高质量。</p>
+                    </details>
+                </section>
+
+                <!-- 用户评论 -->
+                <section class="section" id="用户评论">
+                    <div class="section-header">
+                        <h2>用户评论</h2>
+                    </div>
+                    <div class="comment-list">
+                        <div class="comment-item"><div class="avatar">追</div><div class="comment-content"><span class="comment-name">追剧小能手</span><p>《怪奇物语》最终季第一集就泪目了，威尔和十一的互动还是那么戳。</p></div></div>
+                        <div class="comment-item"><div class="avatar">科</div><div class="comment-content"><span class="comment-name">科幻迷老张</span><p>《人生切割术》第二季后半段有点拖，但整体设定依然顶级，期待第三季。</p></div></div>
+                        <div class="comment-item"><div class="avatar">真</div><div class="comment-content"><span class="comment-name">真探粉</span><p>《夜之国度》朱迪·福斯特演技撑起全剧，但案件收尾略显仓促。</p></div></div>
+                        <div class="comment-item"><div class="avatar">喜</div><div class="comment-content"><span class="comment-name">喜剧爱好者</span><p>《足球教练》第四季还是那么暖，每集都能笑出声，适合下班看。</p></div></div>
+                        <div class="comment-item"><div class="avatar">毒</div><div class="comment-content"><span class="comment-name">毒枭老粉</span><p>《毒枭：墨西哥》最终季把时间线收拢了，虽然不如前几季震撼但完成了闭环。</p></div></div>
+                        <div class="comment-item"><div class="avatar">白</div><div class="comment-content"><span class="comment-name">白莲花观察员</span><p>第三季预告片质感很好，泰国取景加分，希望保持前两季的讽刺力度。</p></div></div>
+                        <div class="comment-item"><div class="avatar">熊</div><div class="comment-content"><span class="comment-name">熊家餐馆食客</span><p>《熊家餐馆》第四季续订了！厨房戏的紧张感真的独一份。</p></div></div>
+                        <div class="comment-item"><div class="avatar">东</div><div class="comment-content"><span class="comment-name">东城梦魇观众</span><p>《东城梦魇》是近年最好的限定剧之一，凯特·温斯莱特演活了小镇警探。</p></div></div>
+                        <div class="comment-item"><div class="avatar">最</div><div class="comment-content"><span class="comment-name">最后生还者</span><p>第二季剧照出了，希望不要像游戏剧情那么虐，但质量应该稳。</p></div></div>
+                        <div class="comment-item"><div class="avatar">每</div><div class="comment-content"><span class="comment-name">每日追更</span><p>最近更新节奏太快了，周更根本不够看，打算攒几集再一次性刷。</p></div></div>
+                        <div class="comment-item"><div class="avatar">老</div><div class="comment-content"><span class="comment-name">老剧重温</span><p>《真探》第一季还是无法超越，每次重看都有新细节。</p></div></div>
+                        <div class="comment-item"><div class="avatar">新</div><div class="comment-content"><span class="comment-name">新入坑小白</span><p>从《足球教练》开始入坑美剧，现在在补《人生切割术》，有点烧脑但很上头。</p></div></div>
+                        <div class="comment-item"><div class="avatar">周</div><div class="comment-content"><span class="comment-name">周末刷剧</span><p>希望多推荐一些类似《东城梦魇》的限定剧，短小精悍适合周末刷完。</p></div></div>
+                    </div>
+                </section>
+
+                <!-- 相关资讯 -->
+                <section class="section" id="相关资讯">
+                    <div class="section-header">
+                        <h2>相关资讯</h2>
+                    </div>
+                    <ul class="news-list">
+                        <li class="news-item">
+                            <div class="news-date">2026-11-08</div>
+                            <div class="news-body"><h4>《怪奇物语》最终季首集上线，首日播放量创平台纪录</h4><p>第五季第一集上线12小时播放量突破1800万，成为平台当日最热剧集。</p></div>
+                        </li>
+                        <li class="news-item">
+                            <div class="news-date">2026-11-07</div>
+                            <div class="news-body"><h4>《白莲花度假村》第三季发布正式预告，定档11月15日</h4><p>新一季泰国度假村背景，预告片延续讽刺基调，首播集时长75分钟。</p></div>
+                        </li>
+                        <li class="news-item">
+                            <div class="news-date">2026-11-06</div>
+                            <div class="news-body"><h4>《人生切割术》第二季收官，豆瓣评分稳定在9.1</h4><p>第二季共10集已全部上线，结局引发关于记忆分离伦理的广泛讨论。</p></div>
+                        </li>
+                        <li class="news-item">
+                            <div class="news-date">2026-11-04</div>
+                            <div class="news-body"><h4>《足球教练》第四季收视回升，第四集获系列最高单集评分</h4><p>第四集“回归”在IMDb单集评分达到9.3，成为本季目前最高分。</p></div>
+                        </li>
+                        <li class="news-item">
+                            <div class="news-date">2026-11-02</div>
+                            <div class="news-body"><h4>《熊家餐馆》第四季正式续订，主创确认回归</h4><p>FX宣布续订《熊家餐馆》第四季，预计2027年春季开拍。</p></div>
+                        </li>
+                        <li class="news-item">
+                            <div class="news-date">2026-10-30</div>
+                            <div class="news-body"><h4>《真探：夜之国度》冬季档上线，朱迪·福斯特谈角色准备</h4><p>朱迪·福斯特在采访中透露为角色进行了两个月的体能和方言训练。</p></div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- 相关推荐 -->
+                <section class="section" id="相关推荐">
+                    <div class="section-header">
+                        <h2>相关推荐</h2>
+                    </div>
+                    <div class="tag-cloud">
+                        <a href="#精选推荐" class="tag">《东城梦魇》限定剧</a>
+                        <a href="#精选推荐" class="tag">《心灵猎人》犯罪心理</a>
+                        <a href="#精选推荐" class="tag">《后翼弃兵》成长剧</a>
+                        <a href="#精选推荐" class="tag">《西部世界》科幻</a>
+                        <a href="#精选推荐" class="tag">《了不起的麦瑟尔夫人》喜剧</a>
+                        <a href="#精选推荐" class="tag">《苍穹浩瀚》太空歌剧</a>
+                        <a href="#精选推荐" class="tag">《王冠》历史传记</a>
+                        <a href="#精选推荐" class="tag">《继承之战》商战</a>
+                    </div>
+                </section>
+
+                <!-- 补充板块：热门榜单 -->
+                <section class="section" id="热门榜单">
+                    <div class="section-header">
+                        <h2>热门榜单</h2>
+                    </div>
+                    <ol class="ranking-list" style="list-style:none; padding:0; margin:0;">
+                        <li><span class="rank-num">1</span><span>怪奇物语 最终季</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">热度 9.8</span></li>
+                        <li><span class="rank-num">2</span><span>白莲花度假村 第三季</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">热度 9.2</span></li>
+                        <li><span class="rank-num">3</span><span>人生切割术 第二季</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">评分 9.1</span></li>
+                        <li><span class="rank-num">4</span><span>足球教练 第四季</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">热度 9.0</span></li>
+                        <li><span class="rank-num">5</span><span>真探：夜之国度</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">评分 8.7</span></li>
+                        <li><span class="rank-num">6</span><span>毒枭：墨西哥 最终季</span><span style="margin-left:auto; font-size:0.8rem; color:#94a3b8;">评分 8.9</span></li>
+                    </ol>
+                </section>
+            </div>
+
+            <!-- 右栏辅助 -->
+            <aside>
+                <div class="aside-panel">
+                    <h3>更新流</h3>
+                    <ul class="update-stream">
+                        <li><strong>怪奇物语 S5E1</strong> 今天 09:00</li>
+                        <li><strong>白莲花度假村 S3</strong> 昨天 21:10 预告</li>
+                        <li><strong>足球教练 S4E4</strong> 11月4日</li>
+                        <li><strong>真探 S4E5</strong> 11月5日</li>
+                        <li><strong>毒枭：墨西哥 全季</strong> 11月3日</li>
+                    </ul>
+                </div>
+                <div class="aside-panel">
+                    <h3>热门标签</h3>
+                    <div class="tag-cloud" style="gap:8px;">
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">悬疑</a>
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">科幻</a>
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">犯罪</a>
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">喜剧</a>
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">限定剧</a>
+                        <a href="#精选推荐" class="tag" style="font-size:0.75rem; padding:4px 12px;">续订</a>
+                    </div>
+                </div>
+                <div class="aside-panel">
+                    <h3>快捷入口</h3>
+                    <ul style="list-style:none; font-size:0.85rem;">
+                        <li style="padding:6px 0;"><a href="#最新更新" style="color:var(--muted);">今日更新剧集</a></li>
+                        <li style="padding:6px 0;"><a href="#分类入口" style="color:var(--muted);">按类型浏览</a></li>
+                        <li style="padding:6px 0;"><a href="#热门榜单" style="color:var(--muted);">热门榜单</a></li>
+                        <li style="padding:6px 0;"><a href="#常见问题" style="color:var(--muted);">常见问题</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">人人美剧官网入口</div>
+                    <p>聚合美剧观看入口、热播推荐与深度指南，服务美剧观众的追剧与选剧需求。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>频道</h4>
+                    <ul>
+                        <li><a href="#精选推荐">悬疑烧脑</a></li>
+                        <li><a href="#精选推荐">科幻史诗</a></li>
+                        <li><a href="#精选推荐">犯罪纪实</a></li>
+                        <li><a href="#精选推荐">喜剧生活</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容</h4>
+                    <ul>
+                        <li><a href="#最新更新">最新更新</a></li>
+                        <li><a href="#深度解析">深度解析</a></li>
+                        <li><a href="#常见问题">常见问题</a></li>
+                        <li><a href="#用户评论">用户评论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>辅助</h4>
+                    <ul>
+                        <li><a href="#热门榜单">热门榜单</a></li>
+                        <li><a href="#相关资讯">相关资讯</a></li>
+                        <li><a href="#相关推荐">相关推荐</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 人人美剧官网入口 · 内容聚合展示</span>
+                <span>部分内容为示例数据，仅用于展示页面结构</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const cardGrid = document.getElementById('cardGrid');
+            const noResultMessage = document.getElementById('noResultMessage');
+            const cards = cardGrid ? cardGrid.querySelectorAll('.card-item') : [];
+
+            function filterCards() {
+                const query = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
+                cards.forEach(card => {
+                    const title = (card.getAttribute('data-title') || '').toLowerCase();
+                    if (query === '' || title.includes(query)) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                if (visibleCount === 0 && query !== '') {
+                    noResultMessage.classList.add('show');
+                } else {
+                    noResultMessage.classList.remove('show');
+                }
+            }
+
+            searchBtn.addEventListener('click', filterCards);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    filterCards();
+                }
+            });
+            // 输入时实时筛选（可选）
+            searchInput.addEventListener('input', filterCards);
+        })();
+    </script>
+</body>
+  </html>
