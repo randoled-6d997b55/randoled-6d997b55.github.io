@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日大赛每日黑料 - 赛事动态与社区观察</title>
+  <meta name="description" content="每日大赛每日黑料聚合赛事动态与社区观察，提供每日大赛赛程、黑料事件、选手动态、规则解读等具体内容，适合关注赛事进展与社区讨论的读者浏览。">
+  <meta name="keywords" content="赛事赛程速报,社区爆料动态,选手表现追踪,规则解读汇编,每日大赛观察">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1f2b'/%3E%3Cpath d='M16 20h32v6H16zm0 12h20v6H16zm0 12h26v6H16z' fill='%23f0b429'/%3E%3Ccircle cx='48' cy='44' r='10' fill='%23e85d4a'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --panel: #ffffff;
+      --panel-soft: #fbf9f5;
+      --ink: #1d1f2b;
+      --ink-soft: #4e5262;
+      --muted: #7e8291;
+      --line: #e5e1d8;
+      --line-strong: #d6d0c2;
+      --accent: #e85d4a;
+      --accent-deep: #c94736;
+      --amber: #d99a1c;
+      --amber-soft: #fdf3dc;
+      --teal: #2f7f72;
+      --teal-soft: #e3f1ed;
+      --violet: #6a5acd;
+      --violet-soft: #ece9fb;
+      --radius-s: 8px;
+      --radius-m: 12px;
+      --radius-l: 18px;
+      --shadow-s: 0 1px 2px rgba(29,31,43,.06);
+      --shadow-m: 0 6px 20px -8px rgba(29,31,43,.18);
+      --shadow-l: 0 18px 40px -18px rgba(29,31,43,.28);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      --w-max: 1340px;
+      --sticky-offset: 108px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; }
+
+    /* ============ 吸顶公告条 + 页头 ============ */
+    .top-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 120;
+      background: var(--panel);
+      box-shadow: var(--shadow-s);
+    }
+    .notice-bar {
+      background: linear-gradient(90deg, #1d1f2b 0%, #2b2e3d 60%, #3a2c2a 100%);
+      color: #f3efe6;
+      font-size: 13px;
+      letter-spacing: .02em;
+      overflow: hidden;
+    }
+    .notice-inner {
+      max-width: var(--w-max);
+      margin: 0 auto;
+      padding: 8px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .notice-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(232,93,74,.22);
+      flex: none;
+    }
+    .notice-label {
+      font-weight: 700;
+      color: #f0b429;
+      flex: none;
+    }
+    .notice-track {
+      display: flex;
+      gap: 26px;
+      overflow: hidden;
+      white-space: nowrap;
+      mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
+    }
+    .notice-item { color: #e7e2d6; }
+    .notice-item b { color: #fff; font-weight: 600; }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      max-width: var(--w-max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex: none;
+    }
+    .brand-mark {
+      width: 42px; height: 42px;
+      border-radius: 11px;
+      background: #1d1f2b;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .brand-mark svg { width: 26px; height: 26px; }
+    .brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      line-height: 1.2;
+    }
+    .brand-sub {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .main-nav a {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--amber-soft);
+      color: #8a5a00;
+      outline: none;
+    }
+    .main-nav a.is-active {
+      background: var(--ink);
+      color: #fff;
+    }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: none;
+    }
+    .search-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 6px 4px 14px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .search-wrap:focus-within {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(217,154,28,.16);
+    }
+    .search-wrap svg { width: 15px; height: 15px; color: var(--muted); flex: none; }
+    .search-wrap input {
+      border: 0;
+      background: transparent;
+      padding: 5px 6px;
+      font-size: 13px;
+      width: 136px;
+      outline: none;
+      color: var(--ink);
+    }
+    .search-wrap input::placeholder { color: var(--muted); }
+    .search-btn {
+      border: 0;
+      background: var(--ink);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .search-btn:hover { background: var(--accent-deep); }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 5px 14px -6px rgba(232,93,74,.65);
+      transition: transform .15s, background .15s;
+    }
+    .cta-btn:hover { background: var(--accent-deep); transform: translateY(-1px); }
+    .cta-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    /* ============ 首屏 ============ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 460px at 82% -10%, rgba(232,93,74,.14), transparent 60%),
+        radial-gradient(900px 400px at 10% 0%, rgba(217,154,28,.14), transparent 55%),
+        linear-gradient(180deg, #fffdf8 0%, #f5f3ef 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner {
+      max-width: var(--w-max);
+      margin: 0 auto;
+      padding: 40px 22px 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--accent-deep);
+      background: #fff;
+      border: 1px solid rgba(232,93,74,.28);
+      padding: 5px 12px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-s);
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .hero h1 {
+      margin: 16px 0 14px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      line-height: 1.14;
+      letter-spacing: -.01em;
+      font-weight: 900;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(180deg, transparent 62%, rgba(217,154,28,.42) 62%);
+      padding: 0 2px;
+    }
+    .hero-desc {
+      font-size: 15.5px;
+      color: var(--ink-soft);
+      max-width: 620px;
+      margin: 0 0 24px;
+    }
+    .hero-desc strong { color: var(--ink); font-weight: 700; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: var(--ink);
+      transition: border-color .15s, transform .15s;
+    }
+    .btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--line-strong);
+    }
+    .hero-stat b { display: block; font-size: 21px; font-weight: 800; line-height: 1.2; }
+    .hero-stat span { font-size: 12px; color: var(--muted); letter-spacing: .03em; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 300px;
+      border-radius: var(--radius-l);
+      background: linear-gradient(160deg, #1d1f2b 0%, #2c2f40 52%, #3c2f2b 100%);
+      box-shadow: var(--shadow-l);
+      overflow: hidden;
+      padding: 18px;
+    }
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 34px),
+        radial-gradient(360px 180px at 80% 12%, rgba(240,180,41,.22), transparent 70%);
+      pointer-events: none;
+    }
+    .hv-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; position: relative; z-index: 1; }
+    .hv-live {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      color: #ffd9d2; background: rgba(232,93,74,.18);
+      border: 1px solid rgba(232,93,74,.45);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .hv-live i { width: 6px; height: 6px; border-radius: 50%; background: #ff6a55; animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    .hv-date { font-size: 11.5px; color: #b9b6c9; letter-spacing: .06em; }
+    .hv-board { position: relative; z-index: 1; margin-top: 16px; display: grid; gap: 9px; }
+    .hv-row {
+      display: grid;
+      grid-template-columns: 26px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px;
+      padding: 9px 12px;
+    }
+    .hv-rank { font-weight: 800; font-size: 12.5px; color: #f0b429; text-align: center; }
+    .hv-name { color: #f0ede4; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hv-badge {
+      font-size: 10.5px; font-weight: 700;
+      color: #1d1f2b; background: #f0b429;
+      border-radius: 999px; padding: 2px 9px; flex: none;
+    }
+    .hv-badge.alt { background: #e85d4a; color: #fff; }
+    .hv-badge.soft { background: rgba(255,255,255,.16); color: #e9e5da; }
+    .hv-foot {
+      position: relative; z-index: 1;
+      margin-top: 14px;
+      font-size: 11.5px;
+      color: #a9a5b8;
+      display: flex; justify-content: space-between; gap: 10px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+      padding-top: 11px;
+    }
+
+    /* ============ 三栏门户主内容 ============ */
+    .portal {
+      max-width: var(--w-max);
+      margin: 0 auto;
+      padding: 30px 22px 60px;
+      display: grid;
+      grid-template-columns: 184px minmax(0, 1fr) 252px;
+      gap: 26px;
+      align-items: start;
+    }
+    .col-left { position: sticky; top: var(--sticky-offset); align-self: start; display: flex; flex-direction: column; gap: 18px; }
+    .col-right { position: sticky; top: var(--sticky-offset); align-self: start; display: flex; flex-direction: column; gap: 18px; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-s);
+    }
+    .panel-pad { padding: 16px; }
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel-title h2, .panel-title h3 {
+      margin: 0;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .panel-title .more { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+    .panel-title .more:hover { color: var(--accent-deep); }
+
+    .channel-list { display: flex; flex-direction: column; }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 9px 15px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      border-bottom: 1px solid #f0ede6;
+      transition: background .14s, color .14s;
+    }
+    .channel-list a:last-child { border-bottom: 0; }
+    .channel-list a:hover, .channel-list a:focus-visible {
+      background: var(--amber-soft);
+      color: #7d5300;
+      outline: none;
+    }
+    .channel-list .count {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 7px;
+      line-height: 18px;
+    }
+    .channel-list a:hover .count { background: #fff; color: var(--accent-deep); border-color: rgba(232,93,74,.35); }
+
+    .mini-rule { padding: 14px 15px; }
+    .mini-rule h3 { margin: 0 0 7px; font-size: 12.5px; font-weight: 800; color: var(--ink); }
+    .mini-rule p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    .main-stack { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+
+    /* 通用板块头 */
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.01em;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-head h2::before {
+      content: "";
+      width: 5px; height: 20px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--amber));
+      flex: none;
+    }
+    .section-head p { margin: 0; font-size: 12.5px; color: var(--muted); max-width: 460px; }
+    .section-head .link-more { font-size: 12.5px; font-weight: 700; color: var(--accent-deep); }
+    .section-head .link-more:hover { text-decoration: underline; }
+
+    .section-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-l);
+      box-shadow: var(--shadow-s);
+      padding: 22px;
+    }
+    .section-card.soft { background: var(--panel-soft); }
+
+    /* 概览 */
+    .overview-body { font-size: 14.5px; color: var(--ink-soft); }
+    .overview-body p { margin: 0 0 12px; }
+    .overview-body p:last-child { margin-bottom: 0; }
+    .overview-body strong { color: var(--ink); }
+    .keyline {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+    }
+    .keyline span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-soft);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 11px;
+    }
+
+    /* 精选卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-m);
+      overflow: hidden;
+      box-shadow: var(--shadow-s);
+      transition: transform .16s, box-shadow .16s, border-color .16s;
+    }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-m); border-color: var(--line-strong); }
+    .feature-card .thumb {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: #ddd8cd;
+      overflow: hidden;
+    }
+    .feature-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .card-tag-abs {
+      position: absolute; left: 9px; top: 9px;
+      font-size: 10.5px; font-weight: 800; letter-spacing: .02em;
+      padding: 3px 9px; border-radius: 999px;
+      background: rgba(29,31,43,.86); color: #fff;
+      backdrop-filter: blur(4px);
+    }
+    .feature-body { padding: 12px 13px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .feature-body h3 { margin: 0; font-size: 14px; font-weight: 800; line-height: 1.35; }
+    .feature-body h3 a:hover { color: var(--accent-deep); }
+    .feature-desc { margin: 0; font-size: 12.3px; color: var(--ink-soft); line-height: 1.6; flex: 1; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag-row span {
+      font-size: 10.5px; font-weight: 600;
+      color: var(--teal);
+      background: var(--teal-soft);
+      padding: 2px 7px; border-radius: 5px;
+    }
+    .feature-meta {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      font-size: 11px; color: var(--muted); border-top: 1px dashed var(--line);
+      padding-top: 8px;
+    }
+    .feature-meta b { color: var(--accent-deep); font-weight: 800; }
+
+    /* 动态列表 */
+    .live-list { display: flex; flex-direction: column; }
+    .live-item {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr) auto;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .live-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .live-time { font-size: 11.5px; font-weight: 700; color: var(--accent-deep); white-space: nowrap; }
+    .live-main { min-width: 0; }
+    .live-main b { font-size: 13.5px; font-weight: 800; }
+    .live-main p { margin: 2px 0 0; font-size: 12.3px; color: var(--ink-soft); }
+    .live-tag {
+      font-size: 10.5px; font-weight: 700; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 11px;
+    }
+    .cat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-s);
+      padding: 12px 13px;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .cat-item:hover { border-color: var(--amber); box-shadow: 0 4px 14px -8px rgba(217,154,28,.55); transform: translateY(-2px); }
+    .cat-item b { font-size: 13.5px; font-weight: 800; }
+    .cat-item span { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+    .cat-item em { font-style: normal; font-size: 10.5px; font-weight: 700; color: var(--accent-deep); }
+
+    /* 深度解析 */
+    .deep-body { font-size: 14.5px; color: var(--ink-soft); line-height: 1.78; }
+    .deep-body h3 {
+      margin: 22px 0 9px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .deep-body h3::before {
+      content: ""; width: 4px; height: 15px; border-radius: 2px;
+      background: var(--teal); flex: none;
+    }
+    .deep-body h3:first-child { margin-top: 0; }
+    .deep-body p { margin: 0 0 11px; }
+    .deep-body ul { margin: 0 0 14px; padding-left: 20px; }
+    .deep-body li { margin-bottom: 6px; }
+    .deep-body strong { color: var(--ink); }
+    .compare-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-s);
+      overflow: hidden;
+      margin: 14px 0;
+    }
+    .compare-box > div { background: #fff; padding: 12px 14px; }
+    .compare-box h4 { margin: 0 0 6px; font-size: 13px; font-weight: 800; }
+    .compare-box p, .compare-box ul { margin: 0; font-size: 12.5px; color: var(--ink-soft); }
+    .compare-box ul { padding-left: 16px; }
+
+    /* 体验指南步骤 */
+    .step-list { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
+    .step-item {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .step-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .step-item:first-child { padding-top: 0; }
+    .step-num {
+      counter-increment: step;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--ink);
+      color: #fff;
+      font-size: 13px; font-weight: 800;
+    }
+    .step-num::before { content: counter(step, decimal-leading-zero); }
+    .step-content b { font-size: 13.5px; font-weight: 800; display: block; margin-bottom: 3px; }
+    .step-content p { margin: 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.65; }
+
+    /* FAQ */
+    .faq-list details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-s);
+      margin-bottom: 9px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .faq-list details:last-child { margin-bottom: 0; }
+    .faq-list summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 15px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      transition: background .14s;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: "+";
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent-deep);
+      flex: none;
+      line-height: 1;
+    }
+    .faq-list details[open] summary { background: var(--amber-soft); }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list summary:hover { background: #faf7f0; }
+    .faq-list summary:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+    .faq-answer { padding: 0 15px 14px; font-size: 13px; color: var(--ink-soft); line-height: 1.7; }
+    .faq-answer p { margin: 0; }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .comment-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-s);
+      padding: 12px 14px;
+    }
+    .comment-head { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+    .avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 11.5px; font-weight: 800; color: #fff; flex: none;
+    }
+    .comment-head b { font-size: 12.5px; font-weight: 800; }
+    .comment-head time { font-size: 10.5px; color: var(--muted); margin-left: auto; }
+    .comment-card p { margin: 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.65; }
+
+    /* 资讯 */
+    .news-item {
+      display: grid;
+      grid-template-columns: 108px minmax(0, 1fr);
+      gap: 13px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .news-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .news-item:first-child { padding-top: 0; }
+    .news-thumb { aspect-ratio: 3 / 2; border-radius: 7px; overflow: hidden; background: #e3dfd6; }
+    .news-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .news-body h3 { margin: 0 0 3px; font-size: 13.5px; font-weight: 800; line-height: 1.4; }
+    .news-body h3 a:hover { color: var(--accent-deep); }
+    .news-body time { font-size: 10.5px; color: var(--muted); display: block; margin-bottom: 3px; }
+    .news-body p { margin: 0; font-size: 12.3px; color: var(--ink-soft); line-height: 1.55; }
+
+    /* 相关推荐标签 */
+    .rec-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .rec-tags a {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-soft);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 14px;
+      transition: all .15s;
+    }
+    .rec-tags a:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-soft); }
+    .rec-tags a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+    /* 榜单 */
+    .rank-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .rank-table th, .rank-table td { text-align: left; padding: 9px 8px; border-bottom: 1px solid #f0ede6; }
+    .rank-table th { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .03em; }
+    .rank-table tr:last-child td { border-bottom: 0; }
+    .rank-table td:first-child { width: 32px; font-weight: 800; color: var(--accent-deep); }
+    .rank-table td b { font-weight: 700; color: var(--ink); }
+    .rank-table .rate { color: var(--amber); font-weight: 800; font-size: 12.5px; }
+    .rank-table .up { color: var(--teal); font-size: 11px; font-weight: 700; }
+    .rank-table .down { color: var(--muted); font-size: 11px; font-weight: 700; }
+
+    /* 右栏热榜 */
+    .hot-list { display: flex; flex-direction: column; }
+    .hot-item { display: flex; gap: 10px; padding: 9px 15px; border-bottom: 1px solid #f0ede6; align-items: flex-start; }
+    .hot-item:last-child { border-bottom: 0; }
+    .hot-rank {
+      width: 19px; height: 19px; border-radius: 5px;
+      display: grid; place-items: center;
+      font-size: 10.5px; font-weight: 800;
+      background: var(--panel-soft); color: var(--muted); flex: none;
+      border: 1px solid var(--line);
+    }
+    .hot-item:nth-child(1) .hot-rank { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .hot-item:nth-child(2) .hot-rank { background: var(--amber); color: #fff; border-color: var(--amber); }
+    .hot-item:nth-child(3) .hot-rank { background: #8a7bbf; color: #fff; border-color: #8a7bbf; }
+    .hot-body { min-width: 0; }
+    .hot-body b { display: block; font-size: 12.5px; font-weight: 700; line-height: 1.4; }
+    .hot-body span { font-size: 10.5px; color: var(--muted); }
+
+    .update-flow { display: flex; flex-direction: column; }
+    .update-flow li {
+      list-style: none;
+      display: flex; gap: 9px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #f0ede6;
+      font-size: 12px;
+    }
+    .update-flow li:last-child { border-bottom: 0; }
+    .update-flow li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--amber); margin-top: 7px; flex: none; }
+    .update-flow b { font-weight: 700; color: var(--ink); }
+    .update-flow time { color: var(--muted); font-size: 10.5px; margin-left: auto; white-space: nowrap; }
+
+    .sidebar-cta {
+      background: linear-gradient(150deg, #1d1f2b, #352c33);
+      color: #f2eee4;
+      border-radius: var(--radius-m);
+      padding: 16px;
+      box-shadow: var(--shadow-m);
+    }
+    .sidebar-cta h3 { margin: 0 0 6px; font-size: 14px; font-weight: 800; }
+    .sidebar-cta p { margin: 0 0 12px; font-size: 11.5px; color: #b9b5c2; line-height: 1.6; }
+    .sidebar-cta .cta-btn { width: 100%; justify-content: center; font-size: 12.5px; }
+
+    /* 时间线补充 */
+    .timeline { position: relative; padding-left: 18px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 4px; top: 5px; bottom: 5px;
+      width: 2px; background: linear-gradient(180deg, var(--amber), var(--line));
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; padding: 0 0 15px 14px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -18px; top: 5px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--amber);
+    }
+    .tl-item time { font-size: 11px; font-weight: 700; color: var(--accent-deep); display: block; }
+    .tl-item b { font-size: 13px; font-weight: 800; display: block; margin: 1px 0 2px; }
+    .tl-item p { margin: 0; font-size: 12.3px; color: var(--ink-soft); }
+
+    /* 筛选提示 */
+    .filter-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .filter-note b { color: var(--ink); }
+    .no-result {
+      display: none;
+      padding: 22px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-soft);
+      background: var(--panel-soft);
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius-s);
+      margin-top: 12px;
+    }
+    .no-result.show { display: block; }
+
+    /* 页尾 */
+    .site-footer {
+      background: #1a1c26;
+      color: #b9b6c4;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      max-width: var(--w-max);
+      margin: 0 auto;
+      padding: 38px 22px 22px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 28px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .footer-brand .brand-mark { width: 36px; height: 36px; border-radius: 9px; background: #f0b429; }
+    .footer-brand .brand-mark svg { width: 22px; height: 22px; }
+    .footer-brand b { color: #fff; font-size: 16px; font-weight: 800; }
+    .footer-desc { font-size: 12.5px; line-height: 1.7; color: #9b98a8; margin: 0 0 14px; max-width: 300px; }
+    .footer-col h4 { margin: 0 0 11px; font-size: 12.5px; font-weight: 800; color: #fff; letter-spacing: .04em; }
+    .footer-col a { display: block; font-size: 12.5px; color: #9b98a8; padding: 3px 0; transition: color .14s; }
+    .footer-col a:hover { color: #f0b429; }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 18px;
+      font-size: 11.5px;
+      color: #7d7a8a;
+    }
+    .disclaimer { color: #7d7a8a; }
+
+    /* 焦点可见 */
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    /* ============ 响应式 ============ */
+    @media (max-width: 1180px) {
+      .portal { grid-template-columns: 170px minmax(0, 1fr); }
+      .col-right {
+        position: static;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+    }
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 26px; padding: 30px 20px 34px; }
+      .hero-visual { min-height: 260px; max-width: 560px; }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 860px) {
+      .portal { grid-template-columns: 1fr; padding: 22px 18px 46px; gap: 22px; }
+      .col-left { position: static; flex-direction: row; flex-wrap: wrap; }
+      .col-left .panel { flex: 1 1 260px; }
+      .col-right { grid-template-columns: 1fr; }
+      .header-inner { gap: 14px; }
+      .main-nav { order: 3; flex-basis: 100%; overflow-x: auto; padding-bottom: 2px; }
+      .search-wrap input { width: 110px; }
+    }
+    @media (max-width: 740px) {
+      .hero h1 { font-size: 29px; }
+      .hero-stats { gap: 18px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .comment-grid { grid-template-columns: 1fr; }
+      .compare-box { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .news-item { grid-template-columns: 88px minmax(0, 1fr); }
+      .live-item { grid-template-columns: 64px minmax(0, 1fr); }
+      .live-tag { display: none; }
+      .header-tools { width: 100%; }
+      .search-wrap { flex: 1; }
+      .search-wrap input { width: 100%; }
+      .section-card { padding: 16px; }
+      .portal { padding: 18px 14px 40px; }
+      .footer-inner { padding: 30px 16px 18px; }
+    }
+    @media (max-width: 420px) {
+      .cat-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .cta-btn, .hero-actions .btn-ghost { justify-content: center; }
+      .footer-top { grid-template-columns: 1fr; }
+      .search-btn { padding: 6px 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶公告条 + 页头 ============ -->
+<div class="top-sticky">
+  <div class="notice-bar" role="region" aria-label="站内更新公告">
+    <div class="notice-inner">
+      <span class="notice-dot" aria-hidden="true"></span>
+      <span class="notice-label">今日更新</span>
+      <div class="notice-track">
+        <span class="notice-item"><b>「秋季积分赛」第 7 轮对阵公布</b> · 11 月 8 日 09:20</span>
+        <span class="notice-item"><b>选手「林野」直播回应设备争议</b> · 11 月 8 日 08:45</span>
+        <span class="notice-item"><b>新增 14 条赛事回放与判罚记录</b> · 11 月 7 日 22:10</span>
+        <span class="notice-item"><b>「社区规则 4.2 版」申诉通道开启</b> · 11 月 7 日 18:30</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="每日大赛每日黑料首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 8h20v4H6z" fill="#f0b429"/>
+            <path d="M6 15h13v4H6z" fill="#f0b429" opacity=".78"/>
+            <path d="M6 22h17v4H6z" fill="#f0b429" opacity=".55"/>
+            <circle cx="25" cy="24" r="5" fill="#e85d4a"/>
+            <path d="M23.2 24l1.3 1.4 2.3-2.6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">每日大赛每日黑料<span class="brand-sub">赛事动态 · 社区观察</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#top" class="is-active">首页</a>
+        <a href="/#overview">赛事概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#live">今日动态</a>
+        <a href="/#categories">分类导航</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观赛指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">社区评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-wrap" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2" stroke-linecap="round"/>
+          </svg>
+          <input id="siteSearch" type="search" placeholder="搜索条目、选手、赛事" aria-label="搜索条目、选手或赛事">
+          <button class="search-btn" id="searchBtn" type="button">查找</button>
+        </div>
+        <a class="cta-btn" href="/#live">看今日动态</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ============ 首屏 ============ -->
+<main id="top">
+  <section class="hero" aria-label="主题首屏">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><span aria-hidden="true"></span>11 月 8 日 · 赛程与社区更新已同步</span>
+        <h1>每日大赛每日黑料</h1>
+        <p class="hero-desc">
+          这里汇总<strong>每日大赛</strong>的赛程对阵、选手表现、判罚记录与社区讨论焦点，也收录围绕<strong>每日黑料</strong>的事件梳理、时间线还原与多方说法对照。内容面向关注赛事进展、追踪社区热点、想快速判断一条消息可信度的读者。
+        </p>
+        <div class="hero-actions">
+          <a class="cta-btn" href="/#featured">查看今日精选条目</a>
+          <a class="btn-ghost" href="/#live">浏览最新动态</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>37</b><span>今日更新条目</span></div>
+          <div class="hero-stat"><b>14</b><span>赛事回放记录</span></div>
+          <div class="hero-stat"><b>9</b><span>社区热议事件</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-top">
+          <span class="hv-live"><i></i>今日焦点榜</span>
+          <span class="hv-date">2026-11-08 09:40</span>
+        </div>
+        <div class="hv-board">
+          <div class="hv-row"><span class="hv-rank">01</span><span class="hv-name">秋季积分赛第 7 轮前瞻</span><span class="hv-badge">赛程</span></div>
+          <div class="hv-row"><span class="hv-rank">02</span><span class="hv-name">林野设备争议回应</span><span class="hv-badge alt">黑料</span></div>
+          <div class="hv-row"><span class="hv-rank">03</span><span class="hv-name">新秀组八强对阵出炉</span><span class="hv-badge soft">对阵</span></div>
+          <div class="hv-row"><span class="hv-rank">04</span><span class="hv-name">判罚记录 11.07 合集</span><span class="hv-badge soft">记录</span></div>
+          <div class="hv-row"><span class="hv-rank">05</span><span class="hv-name">社区规则 4.2 版解读</span><span class="hv-badge soft">规则</span></div>
+        </div>
+        <div class="hv-foot">
+          <span>数据取自站内条目索引</span>
+          <span>滚动查看完整榜单</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 三栏门户主内容 ============ -->
+  <div class="portal">
+
+    <!-- 左栏：频道索引 -->
+    <aside class="col-left" aria-label="频道索引">
+      <div class="panel">
+        <div class="panel-title"><h2>频道索引</h2><span class="more">10 个</span></div>
+        <nav class="channel-list" aria-label="频道列表">
+          <a href="/#featured">赛程对阵<span class="count">12</span></a>
+          <a href="/#live">今日动态<span class="count">08</span></a>
+          <a href="/#featured">选手表现<span class="count">15</span></a>
+          <a href="/#featured">黑料事件<span class="count">06</span></a>
+          <a href="/#deep">规则解读<span class="count">04</span></a>
+          <a href="/#guide">判罚记录<span class="count">09</span></a>
+          <a href="/#comments">社区讨论<span class="count">21</span></a>
+          <a href="/#news">赛事资讯<span class="count">07</span></a>
+          <a href="/#faq">新手指南<span class="count">06</span></a>
+          <a href="/#ranking">热门榜单<span class="count">10</span></a>
+        </nav>
+      </div>
+      <div class="panel mini-rule">
+        <h3>观赛提示</h3>
+        <p>赛程以官方公示为准；社区爆料建议先核对时间线与原视频，再判断可信度。</p>
+      </div>
+    </aside>
+
+    <!-- 中栏：主内容 -->
+    <div class="main-stack">
+
+      <!-- 1. 主题领域概览 -->
+      <section id="overview" class="section-card" aria-labelledby="overview-title">
+        <div class="section-head">
+          <h2 id="overview-title">赛事与社区观察概览</h2>
+          <p>赛事方向、社区讨论、黑料事件的几条主线</p>
+        </div>
+        <div class="overview-body">
+          <p><strong>每日大赛</strong>通常指以日为单位推进的积分赛、淘汰赛与表演赛组合，赛程密集、对阵变化快。围绕它的内容主要分为四类：一是<strong>赛程与对阵</strong>，包括轮次安排、晋级路径和关键对局时间；二是<strong>选手与战队表现</strong>，涵盖操作数据、赛后采访与状态起伏；三是<strong>判罚与规则</strong>，记录警告、申诉与裁决结果；四是<strong>社区讨论</strong>，由观众和选手在公开平台上的发言、剪辑和争议展开。</p>
+          <p><strong>每日黑料</strong>更接近社区侧的观察词，指向赛事周边被频繁讨论的事件：设备争议、赛程调整质疑、选手私信截图、训练赛泄露、判罚尺度争论等。它不天然等于“假消息”，更准确的理解是“尚未形成统一结论的讨论材料”。一条黑料是否成立，通常要看是否有原视频、时间线是否完整、当事人是否回应、社区是否出现多方交叉验证。</p>
+          <p>当前值得关注的具体方向包括：秋季积分赛第 7 轮的对阵分布、新秀组八强赛的晋级名额、判罚记录 11.07 合集的申诉结果，以及社区规则 4.2 版对爆料帖的标注要求。想快速进入，可以先看今日动态了解发生了什么，再回到精选条目查看具体事件与选手信息。</p>
+          <div class="keyline">
+            <span>秋季积分赛第 7 轮</span>
+            <span>新秀组八强</span>
+            <span>判罚记录 11.07</span>
+            <span>社区规则 4.2 版</span>
+            <span>林野设备争议</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section id="featured" aria-labelledby="featured-title">
+        <div class="section-head">
+          <h2 id="featured-title">今日精选条目</h2>
+          <p>具体赛事、选手与社区事件，按可消费程度排序</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/daily-match07/400/300" width="400" height="300" loading="lazy" alt="秋季积分赛第 7 轮对阵界面">
+              <span class="card-tag-abs">赛程</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#live">秋季积分赛第 7 轮对阵公布</a></h3>
+              <p class="feature-desc">八组对局在今晚 19:30 起分两批进行，胜者进入四强循环。焦点是 B 组两组同分对的先后手安排。</p>
+              <div class="tag-row"><span>积分赛</span><span>对阵</span><span>今晚直播</span></div>
+              <div class="feature-meta"><span>更新 09:20</span><b>热度 9.2</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/linye-device88/400/300" width="400" height="300" loading="lazy" alt="林野设备争议直播回应画面">
+              <span class="card-tag-abs">黑料</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#deep">林野设备争议直播回应</a></h3>
+              <p class="feature-desc">选手在 11 月 8 日早间直播中展示外设清单与后台记录，回应“换机未报备”质疑，并公布后续申诉节点。</p>
+              <div class="tag-row"><span>选手回应</span><span>设备清单</span><span>申诉</span></div>
+              <div class="feature-meta"><span>更新 08:45</span><b>热度 9.6</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/rookie-eight40/400/300" width="400" height="300" loading="lazy" alt="新秀组八强对阵表">
+              <span class="card-tag-abs">对阵</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#live">新秀组八强对阵出炉</a></h3>
+              <p class="feature-desc">八名新秀按小组赛积分排位，首场由积分第一对第八。赛制改为 BO5，11 月 9 日 14:00 开打。</p>
+              <div class="tag-row"><span>新秀组</span><span>BO5</span><span>晋级</span></div>
+              <div class="feature-meta"><span>更新 07:30</span><b>热度 8.7</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/penalty1107/400/300" width="400" height="300" loading="lazy" alt="判罚记录 11.07 合集封面">
+              <span class="card-tag-abs">判罚</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#guide">判罚记录 11.07 合集</a></h3>
+              <p class="feature-desc">收录 11 月 7 日三场比赛中出现的 6 次警告与 2 次暂停判罚，附对应回放时间点与裁决说明。</p>
+              <div class="tag-row"><span>判罚记录</span><span>回放</span><span>裁决</span></div>
+              <div class="feature-meta"><span>更新 22:10</span><b>热度 8.4</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/rule42-community/400/300" width="400" height="300" loading="lazy" alt="社区规则 4.2 版说明页">
+              <span class="card-tag-abs">规则</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#deep">社区规则 4.2 版解读</a></h3>
+              <p class="feature-desc">新版本要求爆料帖标注信源等级与时间线，涉及选手私信的帖子需打码处理，申诉窗口延长至 48 小时。</p>
+              <div class="tag-row"><span>社区规则</span><span>信源等级</span><span>申诉</span></div>
+              <div class="feature-meta"><span>更新 18:30</span><b>热度 8.1</b></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/comment-roundup/400/300" width="400" height="300" loading="lazy" alt="本周社区讨论焦点汇总">
+              <span class="card-tag-abs">讨论</span>
+            </div>
+            <div class="feature-body">
+              <h3><a href="/#comments">本周社区讨论焦点汇总</a></h3>
+              <p class="feature-desc">整理 11 月 3 日至 11 月 8 日社区讨论量最高的 5 个话题，附各方主要观点与未核实部分。</p>
+              <div class="tag-row"><span>社区讨论</span><span>话题汇总</span><span>核实</span></div>
+              <div class="feature-meta"><span>更新 11-08</span><b>热度 7.9</b></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section id="live" class="section-card" aria-labelledby="live-title">
+        <div class="section-head">
+          <h2 id="live-title">今日动态与更新</h2>
+          <p>按时间倒序排列的具体变动</p>
+        </div>
+        <div class="live-list">
+          <div class="live-item">
+            <span class="live-time">今天 09:20</span>
+            <div class="live-main"><b>秋季积分赛第 7 轮对阵公布</b><p>B 组两组同分对先后手已抽签确定，比赛 19:30 开始。</p></div>
+            <span class="live-tag">赛程</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">今天 08:45</span>
+            <div class="live-main"><b>林野直播回应设备争议</b><p>展示外设清单与后台记录，表示已提交申诉材料。</p></div>
+            <span class="live-tag">黑料</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">今天 07:30</span>
+            <div class="live-main"><b>新秀组八强对阵出炉</b><p>赛制改为 BO5，首场 11 月 9 日 14:00 开打。</p></div>
+            <span class="live-tag">对阵</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">昨天 22:10</span>
+            <div class="live-main"><b>判罚记录 11.07 合集上线</b><p>收录 6 次警告与 2 次暂停判罚，附回放时间点。</p></div>
+            <span class="live-tag">记录</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">昨天 18:30</span>
+            <div class="live-main"><b>社区规则 4.2 版申诉通道开启</b><p>涉及爆料帖的申诉窗口延长至 48 小时。</p></div>
+            <span class="live-tag">规则</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">11 月 7 日 15:00</span>
+            <div class="live-main"><b>“青训营选拔赛”报名截止</b><p>共 128 人报名，初筛名单将在 11 月 9 日公布。</p></div>
+            <span class="live-tag">报名</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">11 月 6 日 20:40</span>
+            <div class="live-main"><b>表演赛“明星混编”阵容确定</b><p>四位常驻选手与四位社区票选选手混编成两队。</p></div>
+            <span class="live-tag">表演赛</span>
+          </div>
+          <div class="live-item">
+            <span class="live-time">11 月 5 日 10:15</span>
+            <div class="live-main"><b>秋季积分赛第 6 轮战报发布</b><p>三场出现逆转，积分榜前四差距缩小到 2 分。</p></div>
+            <span class="live-tag">战报</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section id="categories" class="section-card soft" aria-labelledby="categories-title">
+        <div class="section-head">
+          <h2 id="categories-title">分类入口</h2>
+          <p>按你想找的内容类型进入对应频道</p>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#featured"><b>赛程对阵</b><span>轮次安排、晋级路径与开赛时间</span><em>12 条更新</em></a>
+          <a class="cat-item" href="/#featured"><b>选手表现</b><span>操作数据、赛后采访与状态变化</span><em>15 条更新</em></a>
+          <a class="cat-item" href="/#featured"><b>黑料事件</b><span>争议事件梳理、时间线与回应</span><em>6 条更新</em></a>
+          <a class="cat-item" href="/#deep"><b>规则解读</b><span>赛制、判罚尺度与社区规则</span><em>4 条更新</em></a>
+          <a class="cat-item" href="/#guide"><b>判罚记录</b><span>警告、申诉与裁决结果归档</span><em>9 条更新</em></a>
+          <a class="cat-item" href="/#comments"><b>社区讨论</b><span>观众观点、争议焦点与核实进展</span><em>21 条更新</em></a>
+          <a class="cat-item" href="/#news"><b>赛事资讯</b><span>报名、阵容、表演赛等公告</span><em>7 条更新</em></a>
+          <a class="cat-item" href="/#faq"><b>新手指南</b><span>第一次看比赛从哪开始</span><em>6 条问答</em></a>
+        </div>
+        <p class="filter-note">提示：以上分类为栏目定位入口，点击可跳转到对应内容区域；搜索框支持按条目名与选手名查找。</p>
+        <div id="noResult" class="no-result" role="status" aria-live="polite">没有找到与关键词匹配的条目，试试“积分赛”“林野”“判罚”等具体词。</div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section id="deep" class="section-card" aria-labelledby="deep-title">
+        <div class="section-head">
+          <h2 id="deep-title">深度解析：赛事进程与黑料可信度</h2>
+          <p>从赛制差异、事件判断到消费顺序</p>
+        </div>
+        <div class="deep-body">
+          <h3>积分赛与淘汰赛的内容差异</h3>
+          <p><strong>每日大赛</strong>的赛程通常由两种结构组成：积分赛强调连续对局与排名累积，淘汰赛强调单场胜负与晋级压力。对读者来说，积分赛更适合追踪选手状态趋势——比如秋季积分赛第 6 轮到第 7 轮之间，前四名分差只有 2 分，任何一场失利都会改变排位；淘汰赛则更适合看对阵与赛点，比如新秀组八强改为 BO5 后，首局的重要性明显上升。</p>
+          <ul>
+            <li>积分赛：关注累计胜负、同分对的先后手、是否出现“控分”讨论。</li>
+            <li>淘汰赛：关注对阵抽签、赛制长度、关键局的暂停与判罚。</li>
+            <li>表演赛：关注阵容组合与娱乐规则，胜负参考价值较低。</li>
+          </ul>
+
+          <h3>一条黑料从出现到定论要经过什么</h3>
+          <p>社区里的<strong>每日黑料</strong>往往从一段剪辑、一张截图或一句直播发言开始。判断它是否值得采信，可以按四个节点依次核对：原视频是否存在完整上下文、时间线是否与官方赛程对得上、当事人是否作出回应、是否有第三方记录（判罚记录、后台日志、现场观众拍摄）可以交叉印证。以林野设备争议为例，11 月 8 日早间的直播回应提供了外设清单与后台记录，这属于“当事人回应 + 自证材料”的组合，但最终结论仍要看申诉流程的结果。</p>
+
+          <div class="compare-box">
+            <div>
+              <h4>更接近“已核实”</h4>
+              <ul>
+                <li>有完整原视频与时间戳</li>
+                <li>官方判罚记录可对应</li>
+                <li>当事人回应且内容具体</li>
+                <li>多方信源描述一致</li>
+              </ul>
+            </div>
+            <div>
+              <h4>仍属“讨论材料”</h4>
+              <ul>
+                <li>只有截图或二次剪辑</li>
+                <li>时间线与赛程对不上</li>
+                <li>当事人未回应或回应模糊</li>
+                <li>仅单一账号持续发布</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>判罚尺度为什么容易引发争议</h3>
+          <p>判罚记录 11.07 合集中出现了 6 次警告与 2 次暂停判罚，其中两次暂停的时间点接近关键局末尾，因此社区讨论集中。判罚争议通常来自三处：一是规则文本本身留有裁量空间，比如“影响比赛公平”的界定；二是不同场次之间的尺度是否一致；三是申诉窗口是否足够让当事人准备材料。社区规则 4.2 版将申诉窗口延长至 48 小时，正是对第三点的回应。</p>
+
+          <h3>观察社区讨论的实用角度</h3>
+          <p>面对密集的赛事讨论，比较有效的做法是先区分“事实层”和“评价层”。事实层包括比分、对阵、判罚时间点、选手是否报备；评价层包括“这局是不是放水”“这个判罚是否偏袒”。事实层可以直接对照记录，评价层则需要看不同立场的说法。把两者混在一起，容易让一条尚未核实的<strong>每日黑料</strong>被当成定论，也容易让正常的赛程调整被解读为针对某位选手。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section id="guide" class="section-card" aria-labelledby="guide-title">
+        <div class="section-head">
+          <h2 id="guide-title">观赛与内容消费路径</h2>
+          <p>第一次接触，按这个顺序判断投入时间</p>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <span class="step-num" aria-hidden="true"></span>
+            <div class="step-content">
+              <b>先看今日对阵，再看战报</b>
+              <p>对阵页能告诉你今天有哪些比赛、几点开始、谁对谁。战报适合回看已经结束的场次，重点看比分变化与关键局转折，不必从头看完整回放。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num" aria-hidden="true"></span>
+            <div class="step-content">
+              <b>用选手页判断状态，而不是只看胜负</b>
+              <p>选手近三场的操作数据、赛后采访和是否出现设备或网络报备，比单场胜负更能说明状态。连续两场在关键局失误，才值得进一步关注。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num" aria-hidden="true"></span>
+            <div class="step-content">
+              <b>黑料先看时间线，再看评论</b>
+              <p>一条事件如果连时间线都拼不出来，先不急着下结论。优先看有没有原视频、官方记录和当事人回应，其次再看社区讨论中的分歧点。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num" aria-hidden="true"></span>
+            <div class="step-content">
+              <b>类似条目比较：看赛制长度与对阵强度</b>
+              <p>同样是八强赛，BO3 和 BO5 的消耗不同；同样是积分赛，同分对先后手安排会影响结果。比较时先对齐赛制，再比较选手近况，结论才可靠。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num" aria-hidden="true"></span>
+            <div class="step-content">
+              <b>什么时候可以不追</b>
+              <p>表演赛、娱乐规则局和重复剪辑的爆料帖，投入产出比较低。把时间留给积分赛关键轮次、有判罚记录的场次和当事人已回应的争议事件。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section id="faq" class="section-card" aria-labelledby="faq-title">
+        <div class="section-head">
+          <h2 id="faq-title">常见问答</h2>
+          <p>围绕赛程、黑料与判罚的具体问题</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>每日大赛一般多久更新一次赛程？</summary>
+            <div class="faq-answer"><p>积分赛阶段通常每天更新一次对阵，比赛前一天晚间公布次日安排；淘汰赛阶段会根据上一轮结果顺延，可能间隔 1 到 2 天。11 月 7 日到 11 月 8 日的更新节奏是当日公布次日对阵。</p></div>
+          </details>
+          <details>
+            <summary>“每日黑料”里的内容都是真的吗？</summary>
+            <div class="faq-answer"><p>不能一概而论。它更像社区讨论材料的集合，包含已核实事件、当事人回应和未经证实的截图剪辑。建议按时间线、原视频、官方记录和当事人回应四项逐一核对，再决定是否采信。</p></div>
+          </details>
+          <details>
+            <summary>积分赛和淘汰赛在看点上有什么区别？</summary>
+            <div class="faq-answer"><p>积分赛看连续状态与排名变化，同分对的先后手会影响走势；淘汰赛看单场胜负、赛点处理和赛制长度。新秀组八强改为 BO5 后，体力和暂停使用会成为新的观察点。</p></div>
+          </details>
+          <details>
+            <summary>判罚记录在哪里可以对照回放？</summary>
+            <div class="faq-answer"><p>判罚记录 11.07 合集在每条警告和暂停判罚后标注了回放时间点，按对应时间拖动即可核对。如果同一场次出现多次判罚，建议按时间顺序连续看，避免断章取义。</p></div>
+          </details>
+          <details>
+            <summary>第一次看比赛，从哪个条目开始比较好？</summary>
+            <div class="faq-answer"><p>可以先看秋季积分赛第 7 轮的对阵前瞻，了解赛制和对局安排；再挑一场有选手采访的战报回看。如果对社区事件感兴趣，从社区规则 4.2 版解读入手，更容易理解讨论背景。</p></div>
+          </details>
+          <details>
+            <summary>选手设备争议通常怎么判定？</summary>
+            <div class="faq-answer"><p>一般看三点：赛前是否按要求报备、现场是否更换关键外设、后台记录是否与申报一致。林野设备争议中，当事人已在直播中展示外设清单与后台记录，最终结果仍以申诉流程的裁决为准。</p></div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section id="comments" class="section-card" aria-labelledby="comments-title">
+        <div class="section-head">
+          <h2 id="comments-title">社区评论</h2>
+          <p>围绕具体条目与类型的观众发言</p>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e85d4a">阿</span><b>阿岩看比赛</b><time>11-08 09:35</time></div>
+            <p>第 7 轮 B 组同分对的先后手抽签挺关键，先手方在前期资源上明显舒服一些。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2f7f72">林</span><b>林间小记</b><time>11-08 09:10</time></div>
+            <p>设备争议的直播回应我看了，清单和后台记录都对得上，但申诉结果没出来前还是别急着定性。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#d99a1c">北</span><b>北岸观赛</b><time>11-08 08:52</time></div>
+            <p>新秀组改 BO5 是好事，BO3 太看手感，长赛制更能看出调整能力。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6a5acd">石</span><b>石榴汽水</b><time>11-08 08:20</time></div>
+            <p>判罚记录 11.07 里那次暂停的时间点确实尴尬，刚好在关键资源争夺前。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#c94736">小</span><b>小鹿乱撞</b><time>11-07 23:40</time></div>
+            <p>社区规则 4.2 版要求标注信源等级，这个改动挺实用，至少能看出哪些帖只有截图。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#3f6ea8">青</span><b>青柠不加冰</b><time>11-07 22:55</time></div>
+            <p>第 6 轮那场逆转回放我看了两遍，中后期决策确实果断，不是运气。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#8a5a00">大</span><b>大橘为重</b><time>11-07 22:12</time></div>
+            <p>有些黑料帖连时间线都对不上赛程，评论区吵半天，其实先看一眼官方记录就清楚了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2f7f72">慢</span><b>慢半拍</b><time>11-07 21:30</time></div>
+            <p>表演赛阵容挺有意思，但胜负参考价值确实不高，看个乐子就行。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#d99a1c">夏</span><b>夏夜观星</b><time>11-07 20:48</time></div>
+            <p>青训营选拔赛报名 128 人，初筛名单 9 号公布，感觉竞争会比想象中激烈。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#6a5acd">一</span><b>一只咸鱼</b><time>11-07 19:15</time></div>
+            <p>积分赛同分对应该多公布一点抽签细节，不然总有人觉得有猫腻。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#e85d4a">路</span><b>路边社</b><time>11-07 18:02</time></div>
+            <p>林野这场回应算是比较完整了，至少比只有几张截图的帖子有说服力。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#3f6ea8">半</span><b>半糖去冰</b><time>11-07 16:40</time></div>
+            <p>新秀组八强里积分第一对第八，这种排位赛制对第一名的奖励挺明显的。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#8a5a00">老</span><b>老白看局</b><time>11-06 21:22</time></div>
+            <p>判罚尺度还是要多场次对照看，单看一场很容易觉得尺度不一致。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-head"><span class="avatar" style="background:#2f7f72">竹</span><b>竹影扫阶</b><time>11-06 20:05</time></div>
+            <p>社区讨论里最有用的还是那种把时间线和原视频贴全的帖子，省很多事。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section id="news" class="section-card" aria-labelledby="news-title">
+        <div class="section-head">
+          <h2 id="news-title">相关资讯</h2>
+          <p>近期赛事公告与社区规则变化</p>
+        </div>
+        <div>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-schedule08/600/400" width="600" height="400" loading="lazy" alt="秋季积分赛第 7 轮赛程公告配图"></div>
+            <div class="news-body">
+              <h3><a href="/#live">秋季积分赛第 7 轮赛程公告</a></h3>
+              <time>2026-11-08</time>
+              <p>八组对阵分两批进行，19:30 与 21:00 开赛，B 组同分对先后手抽签结果同步公布。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-rule42/600/400" width="600" height="400" loading="lazy" alt="社区规则 4.2 版更新说明配图"></div>
+            <div class="news-body">
+              <h3><a href="/#deep">社区规则 4.2 版正式生效</a></h3>
+              <time>2026-11-07</time>
+              <p>爆料帖需标注信源等级，涉及私信内容需打码，申诉窗口从 24 小时延长至 48 小时。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-rookie08/600/400" width="600" height="400" loading="lazy" alt="新秀组八强赛制调整公告配图"></div>
+            <div class="news-body">
+              <h3><a href="/#live">新秀组八强赛制调整为 BO5</a></h3>
+              <time>2026-11-07</time>
+              <p>八强赛由 BO3 改为 BO5，首场 11 月 9 日 14:00 开打，比赛日增加一天。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-penalty07/600/400" width="600" height="400" loading="lazy" alt="11 月 7 日判罚记录发布配图"></div>
+            <div class="news-body">
+              <h3><a href="/#guide">11 月 7 日判罚记录发布</a></h3>
+              <time>2026-11-07</time>
+              <p>三场比赛共记录 6 次警告与 2 次暂停判罚，对应回放时间点已标注。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-showmatch/600/400" width="600" height="400" loading="lazy" alt="明星混编表演赛阵容公布配图"></div>
+            <div class="news-body">
+              <h3><a href="/#live">明星混编表演赛阵容公布</a></h3>
+              <time>2026-11-06</time>
+              <p>四位常驻选手与四位社区票选选手混编成两队，赛制为两局娱乐规则。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-thumb"><img src="https://picsum.photos/seed/news-youthcamp/600/400" width="600" height="400" loading="lazy" alt="青训营选拔赛报名截止配图"></div>
+            <div class="news-body">
+              <h3><a href="/#live">青训营选拔赛报名截止</a></h3>
+              <time>2026-11-05</time>
+              <p>共 128 人报名，初筛名单 11 月 9 日公布，线下阶段安排在 11 月中旬。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section id="related" class="section-card soft" aria-labelledby="related-title">
+        <div class="section-head">
+          <h2 id="related-title">相关推荐</h2>
+          <p>延伸方向与具体条目索引</p>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured">秋季积分赛第 7 轮</a>
+          <a href="/#featured">林野设备争议回应</a>
+          <a href="/#live">新秀组八强对阵</a>
+          <a href="/#guide">判罚记录 11.07</a>
+          <a href="/#deep">社区规则 4.2 版</a>
+          <a href="/#deep">积分赛同分对先后手</a>
+          <a href="/#guide">BO5 赛制消耗对比</a>
+          <a href="/#comments">社区讨论核实方法</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：热门榜单 + 时间线 -->
+      <section id="ranking" class="section-card" aria-labelledby="ranking-title">
+        <div class="section-head">
+          <h2 id="ranking-title">热门榜单与条目时间线</h2>
+          <p>按社区讨论量与更新节奏整理</p>
+        </div>
+        <table class="rank-table">
+          <thead>
+            <tr><th>#</th><th>条目</th><th>类型</th><th>热度</th><th>趋势</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><b>林野设备争议回应</b></td><td>黑料事件</td><td class="rate">9.6</td><td class="up">↑ 2</td></tr>
+            <tr><td>2</td><td><b>秋季积分赛第 7 轮对阵</b></td><td>赛程</td><td class="rate">9.2</td><td class="up">↑ 1</td></tr>
+            <tr><td>3</td><td><b>新秀组八强 BO5 赛制</b></td><td>对阵</td><td class="rate">8.7</td><td class="down">→ 平</td></tr>
+            <tr><td>4</td><td><b>判罚记录 11.07 合集</b></td><td>判罚</td><td class="rate">8.4</td><td class="up">↑ 3</td></tr>
+            <tr><td>5</td><td><b>社区规则 4.2 版解读</b></td><td>规则</td><td class="rate">8.1</td><td class="down">↓ 1</td></tr>
+            <tr><td>6</td><td><b>明星混编表演赛阵容</b></td><td>表演赛</td><td class="rate">7.6</td><td class="down">↓ 2</td></tr>
+          </tbody>
+        </table>
+
+        <div class="timeline" style="margin-top:20px">
+          <div class="tl-item">
+            <time>2026-11-08 09:20</time>
+            <b>第 7 轮对阵公布</b>
+            <p>B 组同分对先后手抽签完成，比赛 19:30 开始。</p>
+          </div>
+          <div class="tl-item">
+            <time>2026-11-08 08:45</time>
+            <b>林野直播回应</b>
+            <p>展示外设清单与后台记录，表示已提交申诉材料。</p>
+          </div>
+          <div class="tl-item">
+            <time>2026-11-07 22:10</time>
+            <b>判罚记录 11.07 上线</b>
+            <p>收录 6 次警告与 2 次暂停判罚，附回放时间点。</p>
+          </div>
+          <div class="tl-item">
+            <time>2026-11-07 18:30</time>
+            <b>社区规则 4.2 版生效</b>
+            <p>申诉窗口延长至 48 小时，爆料帖需标注信源等级。</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /main-stack -->
+
+    <!-- 右栏：辅助栏 -->
+    <aside class="col-right" aria-label="辅助信息">
+      <div class="panel">
+        <div class="panel-title"><h2>热榜速览</h2><a class="more" href="/#ranking">完整榜单</a></div>
+        <div class="hot-list">
+          <a class="hot-item" href="/#featured"><span class="hot-rank">1</span><span class="hot-body"><b>林野设备争议回应</b><span>黑料事件 · 热度 9.6</span></span></a>
+          <a class="hot-item" href="/#featured"><span class="hot-rank">2</span><span class="hot-body"><b>秋季积分赛第 7 轮对阵</b><span>赛程 · 热度 9.2</span></span></a>
+          <a class="hot-item" href="/#live"><span class="hot-rank">3</span><span class="hot-body"><b>新秀组八强 BO5 赛制</b><span>对阵 · 热度 8.7</span></span></a>
+          <a class="hot-item" href="/#guide"><span class="hot-rank">4</span><span class="hot-body"><b>判罚记录 11.07 合集</b><span>判罚 · 热度 8.4</span></span></a>
+          <a class="hot-item" href="/#deep"><span class="hot-rank">5</span><span class="hot-body"><b>社区规则 4.2 版解读</b><span>规则 · 热度 8.1</span></span></a>
+          <a class="hot-item" href="/#live"><span class="hot-rank">6</span><span class="hot-body"><b>明星混编表演赛阵容</b><span>表演赛 · 热度 7.6</span></span></a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><h3>更新流</h3><span class="more">11 月 8 日</span></div>
+        <ul class="update-flow" style="margin:0;padding:6px 15px 12px;">
+          <li><b>第 7 轮对阵</b><time>09:20</time></li>
+          <li><b>林野直播回应</b><time>08:45</time></li>
+          <li><b>八强赛制调整</b><time>07:30</time></li>
+          <li><b>判罚记录 11.07</b><time>昨天 22:10</time></li>
+          <li><b>规则 4.2 版生效</b><time>昨天 18:30</time></li>
+          <li><b>青训营报名截止</b><time>11-07 15:00</time></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-cta">
+        <h3>追踪今日焦点</h3>
+        <p>把赛程、判罚记录与当事人回应放在一起看，比只看单条爆料更接近事实。</p>
+        <a class="cta-btn" href="/#live">查看完整动态</a>
+      </div>
+    </aside>
+
+  </div><!-- /portal -->
+</main>
+
+<!-- ============ 页尾 ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8h20v4H6z" fill="#1d1f2b"/>
+              <path d="M6 15h13v4H6z" fill="#1d1f2b" opacity=".75"/>
+              <path d="M6 22h17v4H6z" fill="#1d1f2b" opacity=".5"/>
+              <circle cx="25" cy="24" r="4.6" fill="#e85d4a"/>
+            </svg>
+          </span>
+          <b>每日大赛每日黑料</b>
+        </div>
+        <p class="footer-desc">聚合每日大赛的赛程对阵、选手表现、判罚记录与社区黑料事件，帮助读者按具体条目快速了解赛事进展与讨论焦点。</p>
+      </div>
+      <div class="footer-col">
+        <h4>赛事内容</h4>
+        <a href="/#featured">赛程对阵</a>
+        <a href="/#featured">选手表现</a>
+        <a href="/#live">今日动态</a>
+        <a href="/#guide">判罚记录</a>
+      </div>
+      <div class="footer-col">
+        <h4>社区观察</h4>
+        <a href="/#featured">黑料事件</a>
+        <a href="/#deep">规则解读</a>
+        <a href="/#comments">社区讨论</a>
+        <a href="/#news">赛事资讯</a>
+      </div>
+      <div class="footer-col">
+        <h4>使用参考</h4>
+        <a href="/#overview">赛事概览</a>
+        <a href="/#guide">观赛路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#ranking">热门榜单</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 每日大赛每日黑料 · 内容聚合示例页</span>
+      <span class="disclaimer">部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var searchInput = document.getElementById('siteSearch');
+  var searchBtn = document.getElementById('searchBtn');
+  var noResult = document.getElementById('noResult');
+  if (!searchInput || !searchBtn || !noResult) return;
+
+  var searchable = Array.prototype.slice.call(document.querySelectorAll(
+    '.feature-card, .live-item, .cat-item, .news-item, .comment-card, .rec-tags a, .hot-item, .rank-table tbody tr, .tl-item'
+  ));
+
+  function runSearch() {
+    var q = (searchInput.value || '').trim().toLowerCase();
+    if (!q) {
+      searchable.forEach(function (el) { el.style.display = ''; });
+      noResult.classList.remove('show');
+      return;
+    }
+    var hit = 0;
+    searchable.forEach(function (el) {
+      var text = (el.textContent || '').toLowerCase();
+      var match = text.indexOf(q) !== -1;
+      el.style.display = match ? '' : 'none';
+      if (match) hit++;
+    });
+    noResult.classList.toggle('show', hit === 0);
+  }
+
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); runSearch(); }
+  });
+  searchInput.addEventListener('input', function () {
+    if (!searchInput.value.trim()) {
+      searchable.forEach(function (el) { el.style.display = ''; });
+      noResult.classList.remove('show');
+    }
+  });
+})();
+</script>
+</body>
+  </html>
