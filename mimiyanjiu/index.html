@@ -1,0 +1,2012 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>秘密研究所天天向上好好学习 - 学习资源聚合与精选指南</title>
+  <meta name="description" content="秘密研究所天天向上好好学习，是一个学习资源聚合与精选指南页面，提供学科专题、学习工具、方法解析、资料库、挑战计划、问答和社区评论等具体内容，适合学生和自学者查找学习方向与实用资源。">
+  <meta name="keywords" content="学习资源聚合,学科专题,学习方法解析,自学指南,学习工具">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316304a'/%3E%3Cpath d='M18 44V20l14 8 14-8v24' stroke='%23f4c542' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f4f1e8;
+      --bg-soft: #ebe6d8;
+      --panel: #ffffff;
+      --panel-alt: #fbf9f3;
+      --ink: #1b2a38;
+      --ink-soft: #4b5c6b;
+      --muted: #7a8794;
+      --line: #d8d2c2;
+      --brand: #16304a;
+      --brand-2: #23506e;
+      --accent: #d98d2b;
+      --accent-soft: #f4c542;
+      --green: #2f6d5a;
+      --red: #b84a3f;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 2px rgba(22, 48, 74, 0.06);
+      --shadow-md: 0 6px 18px rgba(22, 48, 74, 0.08);
+      --shadow-lg: 0 14px 40px rgba(22, 48, 74, 0.12);
+      --maxw: 1280px;
+      --sticky-offset: 98px;
+      --font-sans: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --font-serif: "Georgia", "Songti SC", "Noto Serif SC", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(244, 197, 66, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 4%, rgba(35, 80, 110, 0.08), transparent 26%),
+        var(--bg);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--brand-2);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent-soft);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .announcebar {
+      background: var(--brand);
+      color: #f7f3e7;
+      font-size: 0.85rem;
+      letter-spacing: 0.01em;
+    }
+
+    .announcebar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0.5rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .announcebar strong {
+      color: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .site-header {
+      background: rgba(250, 247, 240, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0.65rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: 11px;
+      background: var(--brand);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-mark svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.02rem;
+      letter-spacing: 0.02em;
+      color: var(--brand);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 24ch;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+
+    .header-nav a {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      padding: 0.32rem 0.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      background: rgba(22, 48, 74, 0.08);
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .hero {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2.4rem 1.2rem 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(217, 141, 43, 0.12);
+      border: 1px solid rgba(217, 141, 43, 0.25);
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1.18;
+      margin: 0 0 1rem;
+      color: var(--brand);
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+      word-break: break-word;
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--ink-soft);
+      max-width: 62ch;
+      margin: 0 0 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fdf8ec;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      background: #0f2438;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--brand);
+      border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+      background: var(--panel);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      height: auto;
+      max-height: 330px;
+      filter: drop-shadow(0 12px 24px rgba(22, 48, 74, 0.12));
+    }
+
+    .layout {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 1.2rem 3rem;
+      display: grid;
+      grid-template-columns: 176px minmax(0, 1fr) 256px;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .left-rail,
+    .right-rail {
+      position: sticky;
+      top: var(--sticky-offset);
+      align-self: start;
+    }
+
+    .channel-index {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .channel-index h2 {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.6rem 0.3rem;
+      font-weight: 800;
+    }
+
+    .channel-index ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.15rem;
+    }
+
+    .channel-index a {
+      display: block;
+      padding: 0.38rem 0.55rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-index a:hover,
+    .channel-index a:focus-visible {
+      background: rgba(22, 48, 74, 0.06);
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .channel-index a.active {
+      background: rgba(22, 48, 74, 0.08);
+      color: var(--brand);
+      font-weight: 700;
+      border-left-color: var(--accent);
+    }
+
+    .main-col {
+      min-width: 0;
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.4rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      min-width: 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+    }
+
+    .section-head h2 {
+      font-size: 1.24rem;
+      line-height: 1.3;
+      margin: 0;
+      color: var(--brand);
+      letter-spacing: -0.01em;
+    }
+
+    .section-head p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .section-head .meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .overview-body {
+      display: grid;
+      gap: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .overview-body p {
+      margin: 0;
+    }
+
+    .overview-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: var(--panel-alt);
+      border: 1px solid var(--line);
+      font-size: 0.76rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .tag-accent {
+      background: rgba(217, 141, 43, 0.12);
+      border-color: rgba(217, 141, 43, 0.28);
+      color: #8a5314;
+      font-weight: 700;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .content-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel-alt);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .content-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: var(--bg-soft);
+    }
+
+    .card-body {
+      padding: 0.75rem 0.85rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.38rem;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--brand);
+      margin: 0;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      margin-top: 0.2rem;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .card-tags .tag {
+      font-size: 0.68rem;
+      padding: 0.12rem 0.45rem;
+    }
+
+    .list-news {
+      display: grid;
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .list-news li {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.8rem;
+      padding: 0.62rem 0.2rem;
+      border-bottom: 1px dashed var(--line);
+      align-items: baseline;
+    }
+
+    .list-news li:last-child {
+      border-bottom: none;
+    }
+
+    .news-title {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 0.92rem;
+      margin: 0;
+      word-break: break-word;
+    }
+
+    .news-summary {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0.1rem 0 0;
+      word-break: break-word;
+    }
+
+    .news-time {
+      color: var(--muted);
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .category-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel-alt);
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .category-chip:hover,
+    .category-chip:focus-visible {
+      border-color: var(--accent);
+      background: #fffaf0;
+      text-decoration: none;
+    }
+
+    .category-chip strong {
+      font-size: 0.9rem;
+      color: var(--brand);
+    }
+
+    .category-chip span {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .deep-article {
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    .deep-article h3 {
+      font-size: 1.02rem;
+      color: var(--brand);
+      margin: 1.3rem 0 0.5rem;
+      line-height: 1.4;
+    }
+
+    .deep-article h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-article p {
+      margin: 0 0 0.8rem;
+    }
+
+    .deep-article ul {
+      margin: 0 0 0.9rem;
+      padding-left: 1.2rem;
+    }
+
+    .deep-article li {
+      margin-bottom: 0.25rem;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.8rem;
+      margin: 0.8rem 0;
+    }
+
+    .compare-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 0.9rem;
+      background: var(--panel-alt);
+    }
+
+    .compare-card h4 {
+      margin: 0 0 0.3rem;
+      font-size: 0.92rem;
+      color: var(--brand);
+    }
+
+    .compare-card p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 0.6rem;
+      margin: 0.6rem 0 0;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 2.4rem;
+      min-height: 1.8rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fdf7e7;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    details.faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel-alt);
+      padding: 0.55rem 0.8rem;
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--brand);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.18rem 0;
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.faq-item summary::before {
+      content: "+";
+      display: inline-grid;
+      place-items: center;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background: rgba(22, 48, 74, 0.08);
+      color: var(--brand);
+      font-weight: 800;
+      flex: 0 0 auto;
+      transition: transform 0.2s ease;
+    }
+
+    details.faq-item[open] summary::before {
+      content: "–";
+      transform: rotate(0deg);
+    }
+
+    details.faq-item .faq-answer {
+      margin: 0.45rem 0 0.2rem;
+      padding-left: 1.8rem;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .comment-list {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .comment {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 0.7rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .comment:last-child {
+      border-bottom: none;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: #fff;
+      background: var(--brand-2);
+      flex: 0 0 auto;
+    }
+
+    .comment-body {
+      min-width: 0;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .comment-name {
+      font-weight: 700;
+      font-size: 0.86rem;
+      color: var(--ink);
+    }
+
+    .comment-date {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .comment-text {
+      margin: 0.15rem 0 0;
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      word-break: break-word;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .info-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.6rem;
+      align-items: baseline;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-item h3 {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--brand);
+    }
+
+    .info-item p {
+      margin: 0.1rem 0 0;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    .info-item time {
+      font-size: 0.74rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag-index a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel-alt);
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      word-break: break-word;
+    }
+
+    .tag-index a:hover,
+    .tag-index a:focus-visible {
+      border-color: var(--accent);
+      background: #fffaf0;
+      text-decoration: none;
+    }
+
+    .ranking {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: rank;
+    }
+
+    .ranking li {
+      counter-increment: rank;
+      display: grid;
+      grid-template-columns: 1.8rem minmax(0, 1fr) auto;
+      gap: 0.55rem;
+      align-items: center;
+      padding: 0.5rem 0.3rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .ranking li:last-child {
+      border-bottom: none;
+    }
+
+    .ranking li::before {
+      content: counter(rank);
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 50%;
+      background: var(--bg-soft);
+      color: var(--brand);
+      font-size: 0.76rem;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .ranking li:nth-child(1)::before {
+      background: var(--accent-soft);
+      color: #4a3212;
+    }
+
+    .ranking li:nth-child(2)::before {
+      background: #cfd8dc;
+      color: #2b3b45;
+    }
+
+    .ranking li:nth-child(3)::before {
+      background: #e0b48f;
+      color: #4b2f1d;
+    }
+
+    .rank-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+      word-break: break-word;
+    }
+
+    .rank-sub {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .rank-score {
+      font-size: 0.78rem;
+      color: var(--brand-2);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .right-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 0.85rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.9rem;
+    }
+
+    .right-card h2 {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.65rem;
+      font-weight: 800;
+    }
+
+    .right-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .right-list li {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .right-list .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: 0 0 auto;
+      margin-top: 0.45rem;
+    }
+
+    .right-list a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .right-list a:hover,
+    .right-list a:focus-visible {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    .update-stream {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .update-stream li {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      align-items: baseline;
+    }
+
+    .update-stream time {
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      background: var(--brand);
+      color: #dce5ea;
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1.2rem 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.8fr));
+      gap: 1.6rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-brand .brand-mark {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand strong {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .footer-desc {
+      font-size: 0.84rem;
+      color: #b9c7d1;
+      margin: 0 0 0.7rem;
+      max-width: 40ch;
+    }
+
+    .footer-col h3 {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin: 0 0 0.55rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.28rem;
+    }
+
+    .footer-col a {
+      color: #c4d1d9;
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0.8rem 1.2rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      font-size: 0.74rem;
+      color: #9fb1bd;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --sticky-offset: 92px;
+      }
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .left-rail,
+      .right-rail {
+        position: static;
+      }
+      .channel-index ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+      .channel-index a {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: var(--radius-sm);
+        padding: 0.32rem 0.65rem;
+        background: var(--panel-alt);
+      }
+      .channel-index a.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--accent);
+      }
+      .right-rail {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0.9rem;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 1.6rem;
+      }
+      .hero h1 {
+        max-width: none;
+      }
+      .hero-visual {
+        min-height: 200px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      :root {
+        --sticky-offset: 86px;
+      }
+      body {
+        font-size: 15px;
+      }
+      .header-inner {
+        padding: 0.55rem 0.9rem;
+      }
+      .brand-text {
+        max-width: 18ch;
+        font-size: 0.92rem;
+      }
+      .header-nav {
+        margin-left: 0;
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.2rem;
+        scrollbar-width: thin;
+      }
+      .header-nav a {
+        flex: 0 0 auto;
+      }
+      .layout {
+        padding: 0 0.8rem 2rem;
+      }
+      .section {
+        padding: 1rem 0.9rem 1.1rem;
+        border-radius: var(--radius-md);
+      }
+      .hero {
+        padding: 1.3rem 0.9rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 0.9rem 1rem;
+      }
+      .footer-bottom {
+        padding: 0.8rem 0.9rem 1rem;
+      }
+      .right-rail {
+        grid-template-columns: 1fr;
+      }
+      .list-news li {
+        grid-template-columns: 1fr;
+      }
+      .news-time {
+        justify-self: start;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <div class="sticky-wrap">
+    <div class="announcebar" role="region" aria-label="站内公告">
+      <div class="announcebar-inner">
+        <span aria-hidden="true">◆</span>
+        <span><strong>11 月 8 日更新：</strong>新增《高等数学极限专题 12 讲》与《英语学术写作词表 v3》，本周共上新 9 个条目，3 份笔记开放下载。</span>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/#top" aria-label="秘密研究所天天向上好好学习首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img" aria-label="秘密研究所标识">
+              <path d="M16 46V18l16 9 16-9v28" fill="none" stroke="#f4c542" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="44" r="3" fill="#f4c542"/>
+            </svg>
+          </span>
+          <span class="brand-text">秘密研究所天天向上好好学习</span>
+        </a>
+        <nav class="header-nav" aria-label="主题导航">
+          <a href="/#shuxue-zhuanti">数学专题</a>
+          <a href="/#yingyu-xuexi">英语学习</a>
+          <a href="/#kaoyan-guihua">考研规划</a>
+          <a href="/#biancheng-jichu">编程基础</a>
+          <a href="/#xuexi-gongju">学习工具</a>
+          <a href="/#shequ-taolun">社区讨论</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="hero-kicker">学习资源聚合 · 精选指南</span>
+        <h1 id="hero-title">秘密研究所天天向上好好学习</h1>
+        <p class="hero-desc">汇聚学科专题、学习方法、工具清单与自学路径的学习资源聚合页。这里整理高等数学极限专题、英语学术写作、考研数学冲刺、Python 入门、笔记工具与记忆方法等具体内容，面向学生、备考者和自学人群，提供可执行的选学顺序与判断依据。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#jingxuan-tuijian">查看精选条目</a>
+          <a class="btn btn-ghost" href="/#shendu-jiexi">阅读深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 320" role="img" aria-label="书本与学习路径的抽象构图">
+          <defs>
+            <linearGradient id="bookGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#23506e"/>
+              <stop offset="1" stop-color="#16304a"/>
+            </linearGradient>
+            <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fffdf7"/>
+              <stop offset="1" stop-color="#efe8d8"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="30" width="380" height="260" rx="22" fill="#fbf7ec" stroke="#d8d2c2"/>
+          <path d="M62 214c0-58 38-104 88-118 52-15 108 4 142 46" fill="none" stroke="#d98d2b" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+          <circle cx="62" cy="214" r="7" fill="#d98d2b"/>
+          <circle cx="292" cy="142" r="7" fill="#2f6d5a"/>
+          <path d="M120 196l52-34 48 22 58-54 42 30" fill="none" stroke="#23506e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="96" y="90" width="104" height="86" rx="8" fill="url(#bookGrad)"/>
+          <rect x="106" y="100" width="84" height="66" rx="4" fill="url(#pageGrad)"/>
+          <path d="M118 114h58M118 128h48M118 142h52" stroke="#b9b09b" stroke-width="4" stroke-linecap="round"/>
+          <rect x="228" y="120" width="94" height="76" rx="8" fill="#f4c542"/>
+          <rect x="238" y="130" width="74" height="56" rx="4" fill="#fffdf7"/>
+          <path d="M248 144h52M248 156h40M248 168h46" stroke="#c9b57b" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="328" cy="88" r="15" fill="#2f6d5a"/>
+          <path d="M321 88l5 5 9-10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="layout">
+      <aside class="left-rail" aria-label="频道索引">
+        <nav class="channel-index" aria-label="内容频道">
+          <h2>频道索引</h2>
+          <ul>
+            <li><a href="/#lingyu-gaishu" class="active">领域概览</a></li>
+            <li><a href="/#jingxuan-tuijian">精选条目</a></li>
+            <li><a href="/#zuixin-dongtai">最新动态</a></li>
+            <li><a href="/#fenlei-rukou">分类入口</a></li>
+            <li><a href="/#shendu-jiexi">深度解析</a></li>
+            <li><a href="/#tiyan-zhinan">体验指南</a></li>
+            <li><a href="/#changjian-wenda">常见问答</a></li>
+            <li><a href="/#yonghu-pinglun">用户评论</a></li>
+            <li><a href="/#xiangguan-zixun">相关资讯</a></li>
+            <li><a href="/#xiangguan-tuijian">相关推荐</a></li>
+            <li><a href="/#xuexi-bangdan">学习榜单</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main-col">
+        <section class="section" id="lingyu-gaishu" aria-labelledby="gaishu-title">
+          <div class="section-head">
+            <div>
+              <h2 id="gaishu-title">学习资源领域概览：从学科专题到自学路径</h2>
+              <p>围绕数学、英语、编程、考研与学习方法的具体内容方向</p>
+            </div>
+            <span class="meta">2026-11-08 更新</span>
+          </div>
+          <div class="overview-body">
+            <p>学习资源聚合涵盖多个具体方向：数学专题里有高等数学极限、线性代数矩阵运算、概率论条件概率等常考模块；英语学习包括学术写作词表、雅思阅读长难句拆解、考研英语完形填空高频词组；编程基础则从 Python 列表推导式、SQL 多表连接、Git 分支合并一路延伸到小型项目练习。每个方向都有对应的课程、笔记、练习题和工具清单。</p>
+            <p>备考类内容是另一条主线，考研数学冲刺卷、英语真题精读、政治选择题带背、专业课框架默写等条目更新频繁，适合按阶段筛选。工具与方法的关注点更偏日常：Anki 记忆卡牌组、Notion 学习模板、番茄钟记录表、错题本整理法、康奈尔笔记模板等，帮助把输入转化为可复习的产出。自学者通常需要先判断自己的基础水平，再选择专题深度和练习量，而不是一次性铺开所有方向。</p>
+            <div class="overview-tags" aria-label="领域关键词">
+              <span class="tag tag-accent">高等数学极限</span>
+              <span class="tag">英语学术写作</span>
+              <span class="tag">考研数学冲刺</span>
+              <span class="tag">Python 入门</span>
+              <span class="tag">Anki 记忆卡</span>
+              <span class="tag">错题本整理法</span>
+              <span class="tag">康奈尔笔记</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="jingxuan-tuijian" aria-labelledby="jingxuan-title">
+          <div class="section-head">
+            <div>
+              <h2 id="jingxuan-title">精选学习条目推荐</h2>
+              <p>按主题方向、难度与更新状态筛选的具体条目</p>
+            </div>
+            <span class="meta">6 个条目</span>
+          </div>
+          <div class="card-grid">
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/gaoshu-jixian01/400/300" alt="高等数学极限专题讲义封面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">高等数学极限专题 12 讲</h3>
+                <p class="card-desc">从数列极限定义到洛必达法则的完整讲义，每讲配 6 道分级练习，适合期中复习与考研基础阶段。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">数学专题</span>
+                  <span class="tag">极限</span>
+                  <span class="tag">考研基础</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 9.2</span>
+                  <span>11-08 更新</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/yingyu-words03/400/300" alt="英语学术写作词表排版示例" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">英语学术写作词表 v3</h3>
+                <p class="card-desc">收录 420 个论文高频词与 86 个连接句式，按论证、对比、因果分类，附中英对照例句。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">英语学习</span>
+                  <span class="tag">学术写作</span>
+                  <span class="tag">词表</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 8.8</span>
+                  <span>11-07 更新</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/kaoyan-math07/400/300" alt="考研数学冲刺卷答题卡" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">考研数学冲刺卷 6 套</h3>
+                <p class="card-desc">按真题结构组卷，覆盖多元积分、级数与线性代数大题，每套附 25 分钟逐题讲解音频。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">考研规划</span>
+                  <span class="tag">冲刺卷</span>
+                  <span class="tag">数学一</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 9.0</span>
+                  <span>11-06 更新</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/python-list02/400/300" alt="Python 列表推导式代码编辑界面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Python 列表推导式 20 例</h3>
+                <p class="card-desc">用 20 个递进例子讲清条件筛选、嵌套循环与三元表达式，每例附可运行代码与输出说明。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">编程基础</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">代码练习</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 8.6</span>
+                  <span>11-05 更新</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/anki-cards04/400/300" alt="Anki 记忆卡牌组复习界面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Anki 记忆卡牌组：考研词汇 3500</h3>
+                <p class="card-desc">按艾宾浩斯间隔分组，含正面词义、背面例句与发音标记，支持按单元导入和自定义复习上限。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">学习工具</span>
+                  <span class="tag">Anki</span>
+                  <span class="tag">记忆方法</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 8.9</span>
+                  <span>11-04 更新</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/cuoti-ben05/400/300" alt="错题本整理法手写笔记示例" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">错题本整理法：三色标注与归因表</h3>
+                <p class="card-desc">用红黄蓝三色区分概念错误、计算失误与审题偏差，附一页式归因复盘表，适合数学与物理刷题。</p>
+                <div class="card-tags">
+                  <span class="tag tag-accent">学习方法</span>
+                  <span class="tag">错题本</span>
+                  <span class="tag">复盘</span>
+                </div>
+                <div class="card-meta">
+                  <span>评分 8.5</span>
+                  <span>11-03 更新</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="zuixin-dongtai" aria-labelledby="dongtai-title">
+          <div class="section-head">
+            <div>
+              <h2 id="dongtai-title">最新更新与学习动态</h2>
+              <p>条目上线、讲义修订与直播安排</p>
+            </div>
+            <span class="meta">10 条更新</span>
+          </div>
+          <ul class="list-news">
+            <li>
+              <div>
+                <p class="news-title">高等数学极限专题 12 讲</p>
+                <p class="news-summary">第 9 讲“洛必达法则与等价无穷小替换”已上线，配套 12 道练习开放下载。</p>
+              </div>
+              <span class="news-time">今天 10:20</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">英语学术写作词表 v3</p>
+                <p class="news-summary">新增 36 个因果论证连接词，例句库同步扩充至 120 条。</p>
+              </div>
+              <span class="news-time">今天 09:05</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">考研数学冲刺卷 6 套</p>
+                <p class="news-summary">第 4 套真题结构卷开放限时练习，今晚 20:00 直播逐题讲解。</p>
+              </div>
+              <span class="news-time">昨天 21:10</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">Python 列表推导式 20 例</p>
+                <p class="news-summary">补充 3 个嵌套循环案例，代码注释增加常见错误提示。</p>
+              </div>
+              <span class="news-time">昨天 16:40</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">Anki 记忆卡牌组：考研词汇 3500</p>
+                <p class="news-summary">第 7 单元卡牌修订，修正 5 处释义与例句不匹配问题。</p>
+              </div>
+              <span class="news-time">11 月 6 日</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">错题本整理法：三色标注与归因表</p>
+                <p class="news-summary">新增物理学科归因示例，附录补充 1 页复盘提问清单。</p>
+              </div>
+              <span class="news-time">11 月 5 日</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">雅思阅读长难句拆解</p>
+                <p class="news-summary">第 15 期已上线，聚焦定语从句嵌套与插入语省略结构。</p>
+              </div>
+              <span class="news-time">11 月 4 日</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">SQL 多表连接练习卷</p>
+                <p class="news-summary">新增 10 道 join 与子查询混合题，附执行计划阅读提示。</p>
+              </div>
+              <span class="news-time">11 月 3 日</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">政治选择题带背音频</p>
+                <p class="news-summary">第 12 期上线，覆盖马原剩余价值与唯物史观高频选项。</p>
+              </div>
+              <span class="news-time">11 月 2 日</span>
+            </li>
+            <li>
+              <div>
+                <p class="news-title">Notion 学习模板 v2</p>
+                <p class="news-summary">新增周计划与错题追踪两个数据库视图，模板说明页同步更新。</p>
+              </div>
+              <span class="news-time">11 月 1 日</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="fenlei-rukou" aria-labelledby="fenlei-title">
+          <div class="section-head">
+            <div>
+              <h2 id="fenlei-title">分类入口：按学习方向查找</h2>
+              <p>8 个常用类别，对应具体搜索词</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            <a class="category-chip" href="/#shuxue-zhuanti">
+              <strong>数学专题</strong>
+              <span>极限 · 矩阵 · 概率</span>
+            </a>
+            <a class="category-chip" href="/#yingyu-xuexi">
+              <strong>英语学习</strong>
+              <span>学术写作 · 阅读 · 词汇</span>
+            </a>
+            <a class="category-chip" href="/#kaoyan-guihua">
+              <strong>考研规划</strong>
+              <span>冲刺卷 · 真题 · 带背</span>
+            </a>
+            <a class="category-chip" href="/#biancheng-jichu">
+              <strong>编程基础</strong>
+              <span>Python · SQL · Git</span>
+            </a>
+            <a class="category-chip" href="/#xuexi-gongju">
+              <strong>学习工具</strong>
+              <span>Anki · Notion · 番茄钟</span>
+            </a>
+            <a class="category-chip" href="/#xuexi-fangfa">
+              <strong>学习方法</strong>
+              <span>错题本 · 康奈尔笔记</span>
+            </a>
+            <a class="category-chip" href="/#ziliao-xiazai">
+              <strong>资料下载</strong>
+              <span>讲义 · 词表 · 练习卷</span>
+            </a>
+            <a class="category-chip" href="/#shequ-taolun">
+              <strong>社区讨论</strong>
+              <span>答疑 · 打卡 · 经验帖</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="shendu-jiexi" aria-labelledby="shendu-title">
+          <div class="section-head">
+            <div>
+              <h2 id="shendu-title">深度解析：学习条目的类型差异与选择维度</h2>
+              <p>从专题深度、练习密度与复习方式判断一个学习条目是否适合自己</p>
+            </div>
+            <span class="meta">约 760 字</span>
+          </div>
+          <div class="deep-article">
+            <h3>专题讲义与练习卷的区别</h3>
+            <p>专题讲义以概念链条为主线，通常先给定义、再给例题、最后配少量练习，适合第一次系统学习某个模块，例如“高等数学极限专题 12 讲”按定义、性质、计算、应用的顺序推进。练习卷则相反，它默认你已经接触过知识点，用题目密度和限时训练暴露薄弱环节，例如“考研数学冲刺卷 6 套”每套按真题结构组卷，做完后需要对照答案归因，而不是重新逐节读讲义。判断顺序可以看条目名称里是否出现“讲”“专题”还是“卷”“题”，再看单页篇幅和配套答案是讲解型还是速查型。</p>
+
+            <h3>词汇卡牌组与词表的使用场景</h3>
+            <p>Anki 类卡牌组强调间隔重复，适合把“认识但记不牢”的内容拆成最小问答单元，每天固定复习量，长期积累。词表则是线性浏览工具，适合写作前快速查找替换词、连接词和搭配，例如“英语学术写作词表 v3”按论证、对比、因果分类，写论文时按功能检索比逐张翻卡更快。两者不冲突：卡牌组负责记忆留存，词表负责输出时调用。如果目标是三个月内提升阅读词汇量，优先用卡牌组；如果两周后要交英文论文，优先用词表和例句库。</p>
+
+            <div class="compare-grid">
+              <div class="compare-card">
+                <h4>专题讲义</h4>
+                <p>概念完整、例题带推导，适合第一轮系统学习，阅读时间通常较长。</p>
+              </div>
+              <div class="compare-card">
+                <h4>练习卷</h4>
+                <p>题量大、限时结构，适合第二轮查漏补缺，需要配套答案和归因表。</p>
+              </div>
+              <div class="compare-card">
+                <h4>卡牌组</h4>
+                <p>碎片复习、间隔重复，适合记忆型内容，需要每天固定时间投入。</p>
+              </div>
+              <div class="compare-card">
+                <h4>工具模板</h4>
+                <p>不直接给知识，而是给记录和复盘结构，适合已有学习流程的人优化效率。</p>
+              </div>
+            </div>
+
+            <h3>判断一个条目是否值得投入时间的三个信号</h3>
+            <ul>
+              <li><strong>更新说明是否具体：</strong>“第 9 讲上线”“修正 5 处释义”比“内容升级”更能说明维护质量。</li>
+              <li><strong>练习与讲解是否配套：</strong>只有题目没有解析的练习卷，对基础一般的人容易变成无效刷题。</li>
+              <li><strong>难度标注是否清楚：</strong>同一专题下区分基础、强化、冲刺，能避免一上来就做超出当前阶段的题目。</li>
+            </ul>
+
+            <h3>数学与编程类条目的比较方式</h3>
+            <p>数学类条目看推导完整度和题型覆盖，编程类条目看可运行代码和错误提示。两者共同点是都需要“输入—练习—反馈”闭环：数学靠错题归因表，编程靠运行报错和测试用例。比较同类条目时，先看例题或代码是否可复现，再看是否提供阶段划分。例如“Python 列表推导式 20 例”每例附可运行代码，比只给语法总结的条目更容易上手；而“高等数学极限专题 12 讲”每讲配 6 道分级练习，比只讲定义的讲义更适合自测。</p>
+
+            <h3>复习类工具与内容类资源的边界</h3>
+            <p>错题本、康奈尔笔记模板、番茄钟记录表属于复习流程工具，它们本身不产生知识，价值取决于你是否已经有稳定的输入。如果当前连基础讲义都没读完，先补内容再上工具；如果已经刷完一轮题但错误反复出现，错题本和归因表的作用会明显放大。选择时优先看工具是否附具体填写示例，而不是看模板页面是否好看。</p>
+          </div>
+        </section>
+
+        <section class="section" id="tiyan-zhinan" aria-labelledby="tiyan-title">
+          <div class="section-head">
+            <div>
+              <h2 id="tiyan-title">体验指南：从哪个条目开始，按什么顺序投入</h2>
+              <p>面向第一次接触本领域内容的学习者</p>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="step"><strong>先定目标类型：</strong>如果目标是考试提分，优先选“考研数学冲刺卷 6 套”“英语学术写作词表 v3”这类带明确输出物的条目；如果目标是长期能力，选专题讲义和卡牌组。</div>
+            <div class="step"><strong>用一页内容试读：</strong>打开条目先看前两页或前两道例题，判断讲解密度是否匹配当前基础。看不懂推导就退回基础专题，觉得太慢就换练习卷。</div>
+            <div class="step"><strong>配一个复习工具：</strong>数学选错题本加归因表，英语选 Anki 卡牌组，编程选可运行代码加测试记录。工具不要同时上三个，先跑通一个闭环。</div>
+            <div class="step"><strong>按周检查更新说明：</strong>关注条目是否持续修订、练习是否补充解析。更新具体且稳定的条目，通常更值得长期跟随。</div>
+          </div>
+        </section>
+
+        <section class="section" id="changjian-wenda" aria-labelledby="wenda-title">
+          <div class="section-head">
+            <div>
+              <h2 id="wenda-title">常见问答</h2>
+              <p>围绕学习条目选择与使用节奏的真实疑问</p>
+            </div>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>高等数学极限专题一般多久更新一次？</summary>
+              <div class="faq-answer">按目前节奏，专题讲义约每周更新 1 到 2 讲，每讲上线后 1 到 2 天内补充配套练习。冲刺阶段练习卷更新更频繁，通常每周新增 1 套并配直播讲解。</div>
+            </details>
+            <details class="faq-item">
+              <summary>专题讲义和冲刺卷有什么区别，应该先看哪个？</summary>
+              <div class="faq-answer">专题讲义按概念链条展开，适合第一轮系统学习；冲刺卷按真题结构组卷，适合第二轮限时训练和查漏补缺。基础不牢时先看讲义，做完一轮后再上冲刺卷。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第一次接触 Python 列表推导式，从哪个条目开始比较好？</summary>
+              <div class="faq-answer">从“Python 列表推导式 20 例”前 5 例开始，先看条件筛选和三元表达式，再进入嵌套循环案例。每例都附可运行代码，建议边看边在本地跑一遍输出。</div>
+            </details>
+            <details class="faq-item">
+              <summary>Anki 记忆卡牌组和普通词表应该如何配合使用？</summary>
+              <div class="faq-answer">卡牌组负责长期记忆留存，每天固定复习量；普通词表负责写作或阅读时快速检索。可以先用词表建立分类印象，再把记不牢的词加入卡牌组，而不是两边各背一套。</div>
+            </details>
+            <details class="faq-item">
+              <summary>错题本整理法适合哪些科目？</summary>
+              <div class="faq-answer">三色标注与归因表对数学、物理、化学等计算与推理类科目效果最直接，也适用于英语阅读错题。纯记忆型科目可以简化归因栏，只保留错误类型和复习日期。</div>
+            </details>
+            <details class="faq-item">
+              <summary>学习类条目中的评分和热度应该怎么看？</summary>
+              <div class="faq-answer">评分反映条目在维护完整度、练习配套和讲解清晰度上的综合表现，热度反映近期使用人数。两者都只是筛选参考，最终还要看条目难度是否匹配当前阶段，以及是否提供可复现的例题或代码。</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section" id="yonghu-pinglun" aria-labelledby="pinglun-title">
+          <div class="section-head">
+            <div>
+              <h2 id="pinglun-title">用户评论</h2>
+              <p>来自具体条目的使用反馈</p>
+            </div>
+            <span class="meta">14 条</span>
+          </div>
+          <div class="comment-list">
+            <div class="comment">
+              <div class="avatar" aria-hidden="true">林</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">林间小径</span><span class="comment-date">今天 10:42</span></div>
+                <p class="comment-text">极限专题第 9 讲的等价无穷小替换例子很实用，比之前看的讲义多给了 3 个易错替换。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#2f6d5a;">陈</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">陈皮不加糖</span><span class="comment-date">今天 09:18</span></div>
+                <p class="comment-text">英语学术写作词表 v3 的分类方式好评，写论文时按因果连接词直接找，省了不少时间。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#b84a3f;">周</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">周末不早起</span><span class="comment-date">昨天 22:05</span></div>
+                <p class="comment-text">冲刺卷第 4 套的多元积分大题计算量偏大，限时做完整个人有点崩，但解析确实细。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#8a5314;">许</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">许多多</span><span class="comment-date">昨天 20:30</span></div>
+                <p class="comment-text">Python 列表推导式 20 例的嵌套循环部分讲得清楚，代码可以直接跑，适合我这种半吊子。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#23506e;">吴</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">吴聊自习</span><span class="comment-date">昨天 18:12</span></div>
+                <p class="comment-text">Anki 牌组第 7 单元修得及时，之前有几个释义确实对不上例句，现在顺多了。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#2f6d5a;">郑</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">郑在输入</span><span class="comment-date">11 月 7 日</span></div>
+                <p class="comment-text">错题本归因表用在物理上效果不错，三色标注比单纯抄题更有方向感。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#b84a3f;">苏</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">苏打水没气</span><span class="comment-date">11 月 7 日</span></div>
+                <p class="comment-text">希望极限专题能加一个带绝对值的极限例题，现在这块练得少。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#16304a;">韩</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">韩梅梅的笔记</span><span class="comment-date">11 月 6 日</span></div>
+                <p class="comment-text">词表例句质量参差，大部分不错，少数例句有点长，读起来费劲。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#8a5314;">方</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">方糖不方</span><span class="comment-date">11 月 6 日</span></div>
+                <p class="comment-text">Notion 模板 v2 的周计划视图很顺手，错题追踪数据库还在试，暂时没跑顺。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#23506e;">何</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">何以解忧</span><span class="comment-date">11 月 5 日</span></div>
+                <p class="comment-text">雅思阅读长难句第 15 期的插入语例子很好，正好是我最近错得多的类型。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#2f6d5a;">沈</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">沈从文不姓沈</span><span class="comment-date">11 月 5 日</span></div>
+                <p class="comment-text">SQL 多表连接练习卷的 join 题不错，子查询那部分希望多给几个执行计划截图。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#b84a3f;">秦</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">秦时明月</span><span class="comment-date">11 月 4 日</span></div>
+                <p class="comment-text">政治带背音频适合通勤听，马原剩余价值那期我反复听了两遍。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#16304a;">唐</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">唐吉诃德式学习</span><span class="comment-date">11 月 3 日</span></div>
+                <p class="comment-text">专题讲义更新说明写得具体，能看出哪里改了，比只写“内容更新”让人放心。</p>
+              </div>
+            </div>
+            <div class="comment">
+              <div class="avatar" aria-hidden="true" style="background:#8a5314;">顾</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-name">顾言</span><span class="comment-date">11 月 2 日</span></div>
+                <p class="comment-text">康奈尔笔记模板和错题本一起用有点重复，后来只留了错题本，反而更顺手。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="xiangguan-zixun" aria-labelledby="zixun-title">
+          <div class="section-head">
+            <div>
+              <h2 id="zixun-title">相关资讯</h2>
+              <p>条目上线、规则调整与社区讨论焦点</p>
+            </div>
+            <span class="meta">6 条</span>
+          </div>
+          <div class="info-list">
+            <article class="info-item">
+              <div>
+                <h3>高等数学极限专题新增绝对值极限题型</h3>
+                <p>第 10 讲将补充绝对值与分段函数极限的 8 道例题，预计 11 月 10 日上线。</p>
+              </div>
+              <time datetime="2026-11-08">11 月 8 日</time>
+            </article>
+            <article class="info-item">
+              <div>
+                <h3>英语学术写作词表调整连接词分类</h3>
+                <p>因果、对比、递进三类合并为“逻辑连接”大组，检索路径从 3 步缩短为 2 步。</p>
+              </div>
+              <time datetime="2026-11-07">11 月 7 日</time>
+            </article>
+            <article class="info-item">
+              <div>
+                <h3>考研数学冲刺卷第 5 套开放预约</h3>
+                <p>按数学一结构组卷，预约后可在 11 月 12 日参与限时模考与直播答疑。</p>
+              </div>
+              <time datetime="2026-11-06">11 月 6 日</time>
+            </article>
+            <article class="info-item">
+              <div>
+                <h3>Anki 牌组发布考研词汇 3500 第 8 单元</h3>
+                <p>新增 180 张卡牌，覆盖近五年真题高频词，例句标注真题年份。</p>
+              </div>
+              <time datetime="2026-11-04">11 月 4 日</time>
+            </article>
+            <article class="info-item">
+              <div>
+                <h3>社区讨论焦点：错题本到底该不该抄原题</h3>
+                <p>本周讨论帖集中在“剪贴原题”与“只写题干关键词”两种做法，多数反馈倾向后者省时。</p>
+              </div>
+              <time datetime="2026-11-03">11 月 3 日</time>
+            </article>
+            <article class="info-item">
+              <div>
+                <h3>Python 列表推导式条目补充错误提示</h3>
+                <p>针对嵌套循环中变量作用域混淆的 3 个常见报错，新增注释说明与修正写法。</p>
+              </div>
+              <time datetime="2026-11-01">11 月 1 日</time>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="xiangguan-tuijian" aria-labelledby="tuijian-title">
+          <div class="section-head">
+            <div>
+              <h2 id="tuijian-title">相关推荐：延伸学习方向</h2>
+              <p>与当前条目互补的专题与工具</p>
+            </div>
+          </div>
+          <div class="tag-index">
+            <a href="/#shuxue-zhuanti">线性代数矩阵运算入门</a>
+            <a href="/#yingyu-xuexi">雅思阅读长难句拆解</a>
+            <a href="/#kaoyan-guihua">考研英语完形填空高频词组</a>
+            <a href="/#biancheng-jichu">SQL 多表连接练习卷</a>
+            <a href="/#xuexi-gongju">Notion 学习模板 v2</a>
+            <a href="/#xuexi-fangfa">康奈尔笔记模板</a>
+            <a href="/#ziliao-xiazai">概率论条件概率讲义</a>
+            <a href="/#shequ-taolun">每周学习打卡经验帖</a>
+          </div>
+        </section>
+
+        <section class="section" id="xuexi-bangdan" aria-labelledby="bangdan-title">
+          <div class="section-head">
+            <div>
+              <h2 id="bangdan-title">学习榜单：本周条目热度</h2>
+              <p>按访问与收藏综合排序的示例榜单</p>
+            </div>
+            <span class="meta">截至 11-08</span>
+          </div>
+          <ol class="ranking">
+            <li>
+              <div>
+                <p class="rank-title">高等数学极限专题 12 讲</p>
+                <p class="rank-sub">数学专题 · 9.2 分</p>
+              </div>
+              <span class="rank-score">9,820</span>
+            </li>
+            <li>
+              <div>
+                <p class="rank-title">考研数学冲刺卷 6 套</p>
+                <p class="rank-sub">考研规划 · 9.0 分</p>
+              </div>
+              <span class="rank-score">8,650</span>
+            </li>
+            <li>
+              <div>
+                <p class="rank-title">英语学术写作词表 v3</p>
+                <p class="rank-sub">英语学习 · 8.8 分</p>
+              </div>
+              <span class="rank-score">7,940</span>
+            </li>
+            <li>
+              <div>
+                <p class="rank-title">Anki 记忆卡牌组：考研词汇 3500</p>
+                <p class="rank-sub">学习工具 · 8.9 分</p>
+              </div>
+              <span class="rank-score">7,120</span>
+            </li>
+            <li>
+              <div>
+                <p class="rank-title">Python 列表推导式 20 例</p>
+                <p class="rank-sub">编程基础 · 8.6 分</p>
+              </div>
+              <span class="rank-score">6,480</span>
+            </li>
+            <li>
+              <div>
+                <p class="rank-title">错题本整理法：三色标注与归因表</p>
+                <p class="rank-sub">学习方法 · 8.5 分</p>
+              </div>
+              <span class="rank-score">5,930</span>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <aside class="right-rail" aria-label="辅助信息">
+        <div class="right-card">
+          <h2>热门标签</h2>
+          <div class="tag-index">
+            <a href="/#shuxue-zhuanti">高等数学极限</a>
+            <a href="/#yingyu-xuexi">英语学术写作</a>
+            <a href="/#kaoyan-guihua">考研数学冲刺</a>
+            <a href="/#biancheng-jichu">Python 列表推导式</a>
+            <a href="/#xuexi-gongju">Anki 记忆卡</a>
+            <a href="/#xuexi-fangfa">错题本归因</a>
+            <a href="/#ziliao-xiazai">概率论讲义</a>
+            <a href="/#shequ-taolun">学习打卡</a>
+          </div>
+        </div>
+        <div class="right-card">
+          <h2>更新流</h2>
+          <ul class="update-stream">
+            <li><time datetime="2026-11-08">今天</time><span>极限专题第 9 讲上线</span></li>
+            <li><time datetime="2026-11-08">今天</time><span>学术写作词表新增 36 词</span></li>
+            <li><time datetime="2026-11-07">昨天</time><span>冲刺卷第 4 套开放</span></li>
+            <li><time datetime="2026-11-06">11-06</time><span>Anki 牌组第 7 单元修订</span></li>
+            <li><time datetime="2026-11-04">11-04</time><span>雅思长难句第 15 期</span></li>
+            <li><time datetime="2026-11-03">11-03</time><span>SQL 练习卷新增 10 题</span></li>
+          </ul>
+        </div>
+        <div class="right-card">
+          <h2>学习入口</h2>
+          <ul class="right-list">
+            <li><span class="dot" aria-hidden="true"></span><a href="/#shuxue-zhuanti">数学专题讲义合集</a></li>
+            <li><span class="dot" aria-hidden="true"></span><a href="/#yingyu-xuexi">英语词表与长难句</a></li>
+            <li><span class="dot" aria-hidden="true"></span><a href="/#kaoyan-guihua">考研冲刺资料</a></li>
+            <li><span class="dot" aria-hidden="true"></span><a href="/#biancheng-jichu">编程基础练习</a></li>
+            <li><span class="dot" aria-hidden="true"></span><a href="/#xuexi-gongju">复习工具清单</a></li>
+            <li><span class="dot" aria-hidden="true"></span><a href="/#changjian-wenda">常见问答</a></li>
+          </ul>
+        </div>
+        <div class="right-card">
+          <h2>本周打卡</h2>
+          <ul class="right-list">
+            <li><span class="dot" aria-hidden="true"></span><span>数学专题：完成 3 讲</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>英语词表：复习 120 词</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>编程练习：跑通 8 例</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>错题复盘：整理 2 页</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img" aria-label="秘密研究所标识">
+              <path d="M16 46V18l16 9 16-9v28" fill="none" stroke="#f4c542" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="44" r="3" fill="#f4c542"/>
+            </svg>
+          </span>
+          <strong>秘密研究所天天向上好好学习</strong>
+        </div>
+        <p class="footer-desc">学习资源聚合与精选指南，覆盖数学专题、英语学习、考研规划、编程基础、学习工具与学习方法。</p>
+      </div>
+      <div class="footer-col">
+        <h3>内容频道</h3>
+        <ul>
+          <li><a href="/#lingyu-gaishu">领域概览</a></li>
+          <li><a href="/#jingxuan-tuijian">精选条目</a></li>
+          <li><a href="/#zuixin-dongtai">最新动态</a></li>
+          <li><a href="/#fenlei-rukou">分类入口</a></li>
+          <li><a href="/#shendu-jiexi">深度解析</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>延伸阅读</h3>
+        <ul>
+          <li><a href="/#changjian-wenda">常见问答</a></li>
+          <li><a href="/#yonghu-pinglun">用户评论</a></li>
+          <li><a href="/#xiangguan-zixun">相关资讯</a></li>
+          <li><a href="/#xiangguan-tuijian">相关推荐</a></li>
+          <li><a href="/#xuexi-bangdan">学习榜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 秘密研究所天天向上好好学习</span>
+      <span>部分内容为示例数据，仅用于展示页面结构。</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var navLinks = document.querySelectorAll('.channel-index a');
+      var sections = [];
+      navLinks.forEach(function (link) {
+        var id = link.getAttribute('href').replace('/#', '');
+        var el = document.getElementById(id);
+        if (el) sections.push({ link: link, el: el });
+      });
+      if (!sections.length || !('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function (l) { l.classList.remove('active'); });
+            var match = sections.find(function (s) { return s.el === entry.target; });
+            if (match) match.link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { io.observe(s.el); });
+    })();
+  </script>
+</body>
+  </html>
